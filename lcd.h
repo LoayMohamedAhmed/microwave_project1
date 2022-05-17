@@ -10,4 +10,4 @@
 //prototypes definations 
 	void delay_ms(int t);
 	
-	LCD_Cmd(unsigned char command);
+	void LCD_Cmd(unsigned char command);
