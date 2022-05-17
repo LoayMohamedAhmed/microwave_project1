@@ -415,6 +415,11 @@
               <FileType>1</FileType>
               <FilePath>.\keypad.c</FilePath>
             </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\delay.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
