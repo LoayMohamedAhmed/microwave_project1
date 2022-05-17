@@ -34,6 +34,9 @@
 //    delay_ms(2);
 //  }
 //}
+
+
+
 //void init_lcd (void)              
 //{
 //	lcd_cmd(0x38);
