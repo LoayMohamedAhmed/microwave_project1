@@ -426,33 +426,33 @@ ARM Macro Assembler    Page 7
 ]
   233 00000000                 IMPORT           __main
   234 00000000 4780            BLX              R0
-  235 00000002 483E            LDR              R0,= __main
-  236 00000004 4700            BX               R0
-  237 00000006                 ENDP
-  238 00000006         
-  239 00000006         
-  240 00000006         ; Dummy Exception Handlers (infinite loops which can be 
+  235 00000002 4700            BX               R0
+  236 00000004         
+  237 00000004                 ENDP
+  238 00000004         
+  239 00000004         
+  240 00000004         ; Dummy Exception Handlers (infinite loops which can be 
                        modified)
-  241 00000006         
-  242 00000006         NMI_Handler
+  241 00000004         
+  242 00000004         NMI_Handler
                                PROC
-  243 00000006                 EXPORT           NMI_Handler               [WEAK
+  243 00000004                 EXPORT           NMI_Handler               [WEAK
 ]
-  244 00000006 E7FE            B                .
-  245 00000008                 ENDP
-  247 00000008         HardFault_Handler
+  244 00000004 E7FE            B                .
+  245 00000006                 ENDP
+  247 00000006         HardFault_Handler
                                PROC
-  248 00000008                 EXPORT           HardFault_Handler         [WEAK
+  248 00000006                 EXPORT           HardFault_Handler         [WEAK
 ]
-  249 00000008 E7FE            B                .
-  250 0000000A                 ENDP
-  252 0000000A         MemManage_Handler
+  249 00000006 E7FE            B                .
+  250 00000008                 ENDP
+  252 00000008         MemManage_Handler
                                PROC
-  253 0000000A                 EXPORT           MemManage_Handler         [WEAK
+  253 00000008                 EXPORT           MemManage_Handler         [WEAK
 ]
-  254 0000000A E7FE            B                .
-  255 0000000C                 ENDP
-  257 0000000C         BusFault_Handler
+  254 00000008 E7FE            B                .
+  255 0000000A                 ENDP
+  257 0000000A         BusFault_Handler
 
 
 
@@ -460,258 +460,258 @@ ARM Macro Assembler    Page 8
 
 
                                PROC
-  258 0000000C                 EXPORT           BusFault_Handler          [WEAK
+  258 0000000A                 EXPORT           BusFault_Handler          [WEAK
 ]
-  259 0000000C E7FE            B                .
-  260 0000000E                 ENDP
-  262 0000000E         UsageFault_Handler
+  259 0000000A E7FE            B                .
+  260 0000000C                 ENDP
+  262 0000000C         UsageFault_Handler
                                PROC
-  263 0000000E                 EXPORT           UsageFault_Handler        [WEAK
+  263 0000000C                 EXPORT           UsageFault_Handler        [WEAK
 ]
-  264 0000000E E7FE            B                .
-  265 00000010                 ENDP
-  266 00000010         SVC_Handler
+  264 0000000C E7FE            B                .
+  265 0000000E                 ENDP
+  266 0000000E         SVC_Handler
                                PROC
-  267 00000010                 EXPORT           SVC_Handler               [WEAK
+  267 0000000E                 EXPORT           SVC_Handler               [WEAK
 ]
-  268 00000010 E7FE            B                .
-  269 00000012                 ENDP
-  271 00000012         DebugMon_Handler
+  268 0000000E E7FE            B                .
+  269 00000010                 ENDP
+  271 00000010         DebugMon_Handler
                                PROC
-  272 00000012                 EXPORT           DebugMon_Handler          [WEAK
+  272 00000010                 EXPORT           DebugMon_Handler          [WEAK
 ]
-  273 00000012 E7FE            B                .
-  274 00000014                 ENDP
-  276 00000014         PendSV_Handler
+  273 00000010 E7FE            B                .
+  274 00000012                 ENDP
+  276 00000012         PendSV_Handler
                                PROC
-  277 00000014                 EXPORT           PendSV_Handler            [WEAK
+  277 00000012                 EXPORT           PendSV_Handler            [WEAK
 ]
-  278 00000014 E7FE            B                .
-  279 00000016                 ENDP
-  281 00000016         SysTick_Handler
+  278 00000012 E7FE            B                .
+  279 00000014                 ENDP
+  281 00000014         SysTick_Handler
                                PROC
-  282 00000016                 EXPORT           SysTick_Handler           [WEAK
+  282 00000014                 EXPORT           SysTick_Handler           [WEAK
 ]
-  283 00000016 E7FE            B                .
-  284 00000018                 ENDP
-  285 00000018         
-  287 00000018         GPIOA_Handler
+  283 00000014 E7FE            B                .
+  284 00000016                 ENDP
+  285 00000016         
+  287 00000016         GPIOA_Handler
                                PROC
-  288 00000018                 EXPORT           GPIOA_Handler [WEAK]
-  289 00000018 E7FE            B                .
-  290 0000001A                 ENDP
-  291 0000001A         
-  293 0000001A         GPIOB_Handler
+  288 00000016                 EXPORT           GPIOA_Handler [WEAK]
+  289 00000016 E7FE            B                .
+  290 00000018                 ENDP
+  291 00000018         
+  293 00000018         GPIOB_Handler
                                PROC
-  294 0000001A                 EXPORT           GPIOB_Handler [WEAK]
-  295 0000001A E7FE            B                .
-  296 0000001C                 ENDP
-  297 0000001C         
-  299 0000001C         GPIOC_Handler
+  294 00000018                 EXPORT           GPIOB_Handler [WEAK]
+  295 00000018 E7FE            B                .
+  296 0000001A                 ENDP
+  297 0000001A         
+  299 0000001A         GPIOC_Handler
                                PROC
-  300 0000001C                 EXPORT           GPIOC_Handler [WEAK]
-  301 0000001C E7FE            B                .
-  302 0000001E                 ENDP
-  303 0000001E         
-  305 0000001E         GPIOD_Handler
+  300 0000001A                 EXPORT           GPIOC_Handler [WEAK]
+  301 0000001A E7FE            B                .
+  302 0000001C                 ENDP
+  303 0000001C         
+  305 0000001C         GPIOD_Handler
                                PROC
-  306 0000001E                 EXPORT           GPIOD_Handler [WEAK]
-  307 0000001E E7FE            B                .
-  308 00000020                 ENDP
+  306 0000001C                 EXPORT           GPIOD_Handler [WEAK]
+  307 0000001C E7FE            B                .
+  308 0000001E                 ENDP
 
 
 
 ARM Macro Assembler    Page 9 
 
 
-  309 00000020         
-  311 00000020         GPIOE_Handler
+  309 0000001E         
+  311 0000001E         GPIOE_Handler
                                PROC
-  312 00000020                 EXPORT           GPIOE_Handler [WEAK]
-  313 00000020 E7FE            B                .
-  314 00000022                 ENDP
-  315 00000022         
-  317 00000022         UART0_Handler
+  312 0000001E                 EXPORT           GPIOE_Handler [WEAK]
+  313 0000001E E7FE            B                .
+  314 00000020                 ENDP
+  315 00000020         
+  317 00000020         UART0_Handler
                                PROC
-  318 00000022                 EXPORT           UART0_Handler [WEAK]
-  319 00000022 E7FE            B                .
-  320 00000024                 ENDP
-  321 00000024         
-  323 00000024         UART1_Handler
+  318 00000020                 EXPORT           UART0_Handler [WEAK]
+  319 00000020 E7FE            B                .
+  320 00000022                 ENDP
+  321 00000022         
+  323 00000022         UART1_Handler
                                PROC
-  324 00000024                 EXPORT           UART1_Handler [WEAK]
-  325 00000024 E7FE            B                .
-  326 00000026                 ENDP
-  327 00000026         
-  329 00000026         SSI0_Handler
+  324 00000022                 EXPORT           UART1_Handler [WEAK]
+  325 00000022 E7FE            B                .
+  326 00000024                 ENDP
+  327 00000024         
+  329 00000024         SSI0_Handler
                                PROC
-  330 00000026                 EXPORT           SSI0_Handler [WEAK]
-  331 00000026 E7FE            B                .
-  332 00000028                 ENDP
-  333 00000028         
-  335 00000028         I2C0_Handler
+  330 00000024                 EXPORT           SSI0_Handler [WEAK]
+  331 00000024 E7FE            B                .
+  332 00000026                 ENDP
+  333 00000026         
+  335 00000026         I2C0_Handler
                                PROC
-  336 00000028                 EXPORT           I2C0_Handler [WEAK]
-  337 00000028 E7FE            B                .
-  338 0000002A                 ENDP
-  339 0000002A         
-  341 0000002A         PMW0_FAULT_Handler
+  336 00000026                 EXPORT           I2C0_Handler [WEAK]
+  337 00000026 E7FE            B                .
+  338 00000028                 ENDP
+  339 00000028         
+  341 00000028         PMW0_FAULT_Handler
                                PROC
-  342 0000002A                 EXPORT           PMW0_FAULT_Handler [WEAK]
-  343 0000002A E7FE            B                .
-  344 0000002C                 ENDP
-  345 0000002C         
-  347 0000002C         PWM0_0_Handler
+  342 00000028                 EXPORT           PMW0_FAULT_Handler [WEAK]
+  343 00000028 E7FE            B                .
+  344 0000002A                 ENDP
+  345 0000002A         
+  347 0000002A         PWM0_0_Handler
                                PROC
-  348 0000002C                 EXPORT           PWM0_0_Handler [WEAK]
-  349 0000002C E7FE            B                .
-  350 0000002E                 ENDP
-  351 0000002E         
-  353 0000002E         PWM0_1_Handler
+  348 0000002A                 EXPORT           PWM0_0_Handler [WEAK]
+  349 0000002A E7FE            B                .
+  350 0000002C                 ENDP
+  351 0000002C         
+  353 0000002C         PWM0_1_Handler
                                PROC
-  354 0000002E                 EXPORT           PWM0_1_Handler [WEAK]
-  355 0000002E E7FE            B                .
-  356 00000030                 ENDP
-  357 00000030         
-  359 00000030         PWM0_2_Handler
+  354 0000002C                 EXPORT           PWM0_1_Handler [WEAK]
+  355 0000002C E7FE            B                .
+  356 0000002E                 ENDP
+  357 0000002E         
+  359 0000002E         PWM0_2_Handler
                                PROC
-  360 00000030                 EXPORT           PWM0_2_Handler [WEAK]
-  361 00000030 E7FE            B                .
-  362 00000032                 ENDP
-  363 00000032         
-  365 00000032         QEI0_Handler
+  360 0000002E                 EXPORT           PWM0_2_Handler [WEAK]
+  361 0000002E E7FE            B                .
+  362 00000030                 ENDP
+  363 00000030         
+  365 00000030         QEI0_Handler
                                PROC
-  366 00000032                 EXPORT           QEI0_Handler [WEAK]
-  367 00000032 E7FE            B                .
+  366 00000030                 EXPORT           QEI0_Handler [WEAK]
+  367 00000030 E7FE            B                .
 
 
 
 ARM Macro Assembler    Page 10 
 
 
-  368 00000034                 ENDP
-  369 00000034         
-  371 00000034         ADC0SS0_Handler
+  368 00000032                 ENDP
+  369 00000032         
+  371 00000032         ADC0SS0_Handler
                                PROC
-  372 00000034                 EXPORT           ADC0SS0_Handler [WEAK]
-  373 00000034 E7FE            B                .
-  374 00000036                 ENDP
-  375 00000036         
-  377 00000036         ADC0SS1_Handler
+  372 00000032                 EXPORT           ADC0SS0_Handler [WEAK]
+  373 00000032 E7FE            B                .
+  374 00000034                 ENDP
+  375 00000034         
+  377 00000034         ADC0SS1_Handler
                                PROC
-  378 00000036                 EXPORT           ADC0SS1_Handler [WEAK]
-  379 00000036 E7FE            B                .
-  380 00000038                 ENDP
-  381 00000038         
-  383 00000038         ADC0SS2_Handler
+  378 00000034                 EXPORT           ADC0SS1_Handler [WEAK]
+  379 00000034 E7FE            B                .
+  380 00000036                 ENDP
+  381 00000036         
+  383 00000036         ADC0SS2_Handler
                                PROC
-  384 00000038                 EXPORT           ADC0SS2_Handler [WEAK]
-  385 00000038 E7FE            B                .
-  386 0000003A                 ENDP
-  387 0000003A         
-  389 0000003A         ADC0SS3_Handler
+  384 00000036                 EXPORT           ADC0SS2_Handler [WEAK]
+  385 00000036 E7FE            B                .
+  386 00000038                 ENDP
+  387 00000038         
+  389 00000038         ADC0SS3_Handler
                                PROC
-  390 0000003A                 EXPORT           ADC0SS3_Handler [WEAK]
-  391 0000003A E7FE            B                .
-  392 0000003C                 ENDP
-  393 0000003C         
-  395 0000003C         WDT0_Handler
+  390 00000038                 EXPORT           ADC0SS3_Handler [WEAK]
+  391 00000038 E7FE            B                .
+  392 0000003A                 ENDP
+  393 0000003A         
+  395 0000003A         WDT0_Handler
                                PROC
-  396 0000003C                 EXPORT           WDT0_Handler [WEAK]
-  397 0000003C E7FE            B                .
-  398 0000003E                 ENDP
-  399 0000003E         
-  401 0000003E         TIMER0A_Handler
+  396 0000003A                 EXPORT           WDT0_Handler [WEAK]
+  397 0000003A E7FE            B                .
+  398 0000003C                 ENDP
+  399 0000003C         
+  401 0000003C         TIMER0A_Handler
                                PROC
-  402 0000003E                 EXPORT           TIMER0A_Handler [WEAK]
-  403 0000003E E7FE            B                .
-  404 00000040                 ENDP
-  405 00000040         
-  407 00000040         TIMER0B_Handler
+  402 0000003C                 EXPORT           TIMER0A_Handler [WEAK]
+  403 0000003C E7FE            B                .
+  404 0000003E                 ENDP
+  405 0000003E         
+  407 0000003E         TIMER0B_Handler
                                PROC
-  408 00000040                 EXPORT           TIMER0B_Handler [WEAK]
-  409 00000040 E7FE            B                .
-  410 00000042                 ENDP
-  411 00000042         
-  413 00000042         TIMER1A_Handler
+  408 0000003E                 EXPORT           TIMER0B_Handler [WEAK]
+  409 0000003E E7FE            B                .
+  410 00000040                 ENDP
+  411 00000040         
+  413 00000040         TIMER1A_Handler
                                PROC
-  414 00000042                 EXPORT           TIMER1A_Handler [WEAK]
-  415 00000042 E7FE            B                .
-  416 00000044                 ENDP
-  417 00000044         
-  419 00000044         TIMER1B_Handler
+  414 00000040                 EXPORT           TIMER1A_Handler [WEAK]
+  415 00000040 E7FE            B                .
+  416 00000042                 ENDP
+  417 00000042         
+  419 00000042         TIMER1B_Handler
                                PROC
-  420 00000044                 EXPORT           TIMER1B_Handler [WEAK]
-  421 00000044 E7FE            B                .
-  422 00000046                 ENDP
-  423 00000046         
-  425 00000046         TIMER2A_Handler
+  420 00000042                 EXPORT           TIMER1B_Handler [WEAK]
+  421 00000042 E7FE            B                .
+  422 00000044                 ENDP
+  423 00000044         
+  425 00000044         TIMER2A_Handler
                                PROC
-  426 00000046                 EXPORT           TIMER2A_Handler [WEAK]
+  426 00000044                 EXPORT           TIMER2A_Handler [WEAK]
 
 
 
 ARM Macro Assembler    Page 11 
 
 
-  427 00000046 E7FE            B                .
-  428 00000048                 ENDP
-  429 00000048         
-  431 00000048         TIMER2B_Handler
+  427 00000044 E7FE            B                .
+  428 00000046                 ENDP
+  429 00000046         
+  431 00000046         TIMER2B_Handler
                                PROC
-  432 00000048                 EXPORT           TIMER2B_Handler [WEAK]
-  433 00000048 E7FE            B                .
-  434 0000004A                 ENDP
-  435 0000004A         
-  437 0000004A         COMP0_Handler
+  432 00000046                 EXPORT           TIMER2B_Handler [WEAK]
+  433 00000046 E7FE            B                .
+  434 00000048                 ENDP
+  435 00000048         
+  437 00000048         COMP0_Handler
                                PROC
-  438 0000004A                 EXPORT           COMP0_Handler [WEAK]
-  439 0000004A E7FE            B                .
-  440 0000004C                 ENDP
-  441 0000004C         
-  443 0000004C         COMP1_Handler
+  438 00000048                 EXPORT           COMP0_Handler [WEAK]
+  439 00000048 E7FE            B                .
+  440 0000004A                 ENDP
+  441 0000004A         
+  443 0000004A         COMP1_Handler
                                PROC
-  444 0000004C                 EXPORT           COMP1_Handler [WEAK]
-  445 0000004C E7FE            B                .
-  446 0000004E                 ENDP
-  447 0000004E         
-  449 0000004E         COMP2_Handler
+  444 0000004A                 EXPORT           COMP1_Handler [WEAK]
+  445 0000004A E7FE            B                .
+  446 0000004C                 ENDP
+  447 0000004C         
+  449 0000004C         COMP2_Handler
                                PROC
-  450 0000004E                 EXPORT           COMP2_Handler [WEAK]
-  451 0000004E E7FE            B                .
-  452 00000050                 ENDP
-  453 00000050         
-  455 00000050         SYSCTL_Handler
+  450 0000004C                 EXPORT           COMP2_Handler [WEAK]
+  451 0000004C E7FE            B                .
+  452 0000004E                 ENDP
+  453 0000004E         
+  455 0000004E         SYSCTL_Handler
                                PROC
-  456 00000050                 EXPORT           SYSCTL_Handler [WEAK]
-  457 00000050 E7FE            B                .
-  458 00000052                 ENDP
-  459 00000052         
-  461 00000052         FLASH_Handler
+  456 0000004E                 EXPORT           SYSCTL_Handler [WEAK]
+  457 0000004E E7FE            B                .
+  458 00000050                 ENDP
+  459 00000050         
+  461 00000050         FLASH_Handler
                                PROC
-  462 00000052                 EXPORT           FLASH_Handler [WEAK]
-  463 00000052 E7FE            B                .
-  464 00000054                 ENDP
-  465 00000054         
-  467 00000054         GPIOF_Handler
+  462 00000050                 EXPORT           FLASH_Handler [WEAK]
+  463 00000050 E7FE            B                .
+  464 00000052                 ENDP
+  465 00000052         
+  467 00000052         GPIOF_Handler
                                PROC
-  468 00000054                 EXPORT           GPIOF_Handler [WEAK]
-  469 00000054 E7FE            B                .
-  470 00000056                 ENDP
-  471 00000056         
-  473 00000056         GPIOG_Handler
+  468 00000052                 EXPORT           GPIOF_Handler [WEAK]
+  469 00000052 E7FE            B                .
+  470 00000054                 ENDP
+  471 00000054         
+  473 00000054         GPIOG_Handler
                                PROC
-  474 00000056                 EXPORT           GPIOG_Handler [WEAK]
-  475 00000056 E7FE            B                .
-  476 00000058                 ENDP
-  477 00000058         
-  479 00000058         GPIOH_Handler
+  474 00000054                 EXPORT           GPIOG_Handler [WEAK]
+  475 00000054 E7FE            B                .
+  476 00000056                 ENDP
+  477 00000056         
+  479 00000056         GPIOH_Handler
                                PROC
-  480 00000058                 EXPORT           GPIOH_Handler [WEAK]
-  481 00000058 E7FE            B                .
-  482 0000005A                 ENDP
-  483 0000005A         
-  485 0000005A         UART2_Handler
+  480 00000056                 EXPORT           GPIOH_Handler [WEAK]
+  481 00000056 E7FE            B                .
+  482 00000058                 ENDP
+  483 00000058         
+  485 00000058         UART2_Handler
                                PROC
 
 
@@ -719,65 +719,65 @@ ARM Macro Assembler    Page 11
 ARM Macro Assembler    Page 12 
 
 
-  486 0000005A                 EXPORT           UART2_Handler [WEAK]
-  487 0000005A E7FE            B                .
-  488 0000005C                 ENDP
-  489 0000005C         
-  491 0000005C         SSI1_Handler
+  486 00000058                 EXPORT           UART2_Handler [WEAK]
+  487 00000058 E7FE            B                .
+  488 0000005A                 ENDP
+  489 0000005A         
+  491 0000005A         SSI1_Handler
                                PROC
-  492 0000005C                 EXPORT           SSI1_Handler [WEAK]
-  493 0000005C E7FE            B                .
-  494 0000005E                 ENDP
-  495 0000005E         
-  497 0000005E         TIMER3A_Handler
+  492 0000005A                 EXPORT           SSI1_Handler [WEAK]
+  493 0000005A E7FE            B                .
+  494 0000005C                 ENDP
+  495 0000005C         
+  497 0000005C         TIMER3A_Handler
                                PROC
-  498 0000005E                 EXPORT           TIMER3A_Handler [WEAK]
-  499 0000005E E7FE            B                .
-  500 00000060                 ENDP
-  501 00000060         
-  503 00000060         TIMER3B_Handler
+  498 0000005C                 EXPORT           TIMER3A_Handler [WEAK]
+  499 0000005C E7FE            B                .
+  500 0000005E                 ENDP
+  501 0000005E         
+  503 0000005E         TIMER3B_Handler
                                PROC
-  504 00000060                 EXPORT           TIMER3B_Handler [WEAK]
-  505 00000060 E7FE            B                .
-  506 00000062                 ENDP
-  507 00000062         
-  509 00000062         I2C1_Handler
+  504 0000005E                 EXPORT           TIMER3B_Handler [WEAK]
+  505 0000005E E7FE            B                .
+  506 00000060                 ENDP
+  507 00000060         
+  509 00000060         I2C1_Handler
                                PROC
-  510 00000062                 EXPORT           I2C1_Handler [WEAK]
-  511 00000062 E7FE            B                .
-  512 00000064                 ENDP
-  513 00000064         
-  515 00000064         QEI1_Handler
+  510 00000060                 EXPORT           I2C1_Handler [WEAK]
+  511 00000060 E7FE            B                .
+  512 00000062                 ENDP
+  513 00000062         
+  515 00000062         QEI1_Handler
                                PROC
-  516 00000064                 EXPORT           QEI1_Handler [WEAK]
-  517 00000064 E7FE            B                .
-  518 00000066                 ENDP
-  519 00000066         
-  521 00000066         CAN0_Handler
+  516 00000062                 EXPORT           QEI1_Handler [WEAK]
+  517 00000062 E7FE            B                .
+  518 00000064                 ENDP
+  519 00000064         
+  521 00000064         CAN0_Handler
                                PROC
-  522 00000066                 EXPORT           CAN0_Handler [WEAK]
-  523 00000066 E7FE            B                .
-  524 00000068                 ENDP
-  525 00000068         
-  527 00000068         CAN1_Handler
+  522 00000064                 EXPORT           CAN0_Handler [WEAK]
+  523 00000064 E7FE            B                .
+  524 00000066                 ENDP
+  525 00000066         
+  527 00000066         CAN1_Handler
                                PROC
-  528 00000068                 EXPORT           CAN1_Handler [WEAK]
-  529 00000068 E7FE            B                .
-  530 0000006A                 ENDP
-  531 0000006A         
-  533 0000006A         CAN2_Handler
+  528 00000066                 EXPORT           CAN1_Handler [WEAK]
+  529 00000066 E7FE            B                .
+  530 00000068                 ENDP
+  531 00000068         
+  533 00000068         CAN2_Handler
                                PROC
-  534 0000006A                 EXPORT           CAN2_Handler [WEAK]
-  535 0000006A E7FE            B                .
-  536 0000006C                 ENDP
-  537 0000006C         
-  539 0000006C         HIB_Handler
+  534 00000068                 EXPORT           CAN2_Handler [WEAK]
+  535 00000068 E7FE            B                .
+  536 0000006A                 ENDP
+  537 0000006A         
+  539 0000006A         HIB_Handler
                                PROC
-  540 0000006C                 EXPORT           HIB_Handler [WEAK]
-  541 0000006C E7FE            B                .
-  542 0000006E                 ENDP
-  543 0000006E         
-  545 0000006E         USB0_Handler
+  540 0000006A                 EXPORT           HIB_Handler [WEAK]
+  541 0000006A E7FE            B                .
+  542 0000006C                 ENDP
+  543 0000006C         
+  545 0000006C         USB0_Handler
 
 
 
@@ -785,323 +785,323 @@ ARM Macro Assembler    Page 13
 
 
                                PROC
-  546 0000006E                 EXPORT           USB0_Handler [WEAK]
-  547 0000006E E7FE            B                .
-  548 00000070                 ENDP
-  549 00000070         
-  551 00000070         PWM0_3_Handler
+  546 0000006C                 EXPORT           USB0_Handler [WEAK]
+  547 0000006C E7FE            B                .
+  548 0000006E                 ENDP
+  549 0000006E         
+  551 0000006E         PWM0_3_Handler
                                PROC
-  552 00000070                 EXPORT           PWM0_3_Handler [WEAK]
-  553 00000070 E7FE            B                .
-  554 00000072                 ENDP
-  555 00000072         
-  557 00000072         UDMA_Handler
+  552 0000006E                 EXPORT           PWM0_3_Handler [WEAK]
+  553 0000006E E7FE            B                .
+  554 00000070                 ENDP
+  555 00000070         
+  557 00000070         UDMA_Handler
                                PROC
-  558 00000072                 EXPORT           UDMA_Handler [WEAK]
-  559 00000072 E7FE            B                .
-  560 00000074                 ENDP
-  561 00000074         
-  563 00000074         UDMAERR_Handler
+  558 00000070                 EXPORT           UDMA_Handler [WEAK]
+  559 00000070 E7FE            B                .
+  560 00000072                 ENDP
+  561 00000072         
+  563 00000072         UDMAERR_Handler
                                PROC
-  564 00000074                 EXPORT           UDMAERR_Handler [WEAK]
-  565 00000074 E7FE            B                .
-  566 00000076                 ENDP
-  567 00000076         
-  569 00000076         ADC1SS0_Handler
+  564 00000072                 EXPORT           UDMAERR_Handler [WEAK]
+  565 00000072 E7FE            B                .
+  566 00000074                 ENDP
+  567 00000074         
+  569 00000074         ADC1SS0_Handler
                                PROC
-  570 00000076                 EXPORT           ADC1SS0_Handler [WEAK]
-  571 00000076 E7FE            B                .
-  572 00000078                 ENDP
-  573 00000078         
-  575 00000078         ADC1SS1_Handler
+  570 00000074                 EXPORT           ADC1SS0_Handler [WEAK]
+  571 00000074 E7FE            B                .
+  572 00000076                 ENDP
+  573 00000076         
+  575 00000076         ADC1SS1_Handler
                                PROC
-  576 00000078                 EXPORT           ADC1SS1_Handler [WEAK]
-  577 00000078 E7FE            B                .
-  578 0000007A                 ENDP
-  579 0000007A         
-  581 0000007A         ADC1SS2_Handler
+  576 00000076                 EXPORT           ADC1SS1_Handler [WEAK]
+  577 00000076 E7FE            B                .
+  578 00000078                 ENDP
+  579 00000078         
+  581 00000078         ADC1SS2_Handler
                                PROC
-  582 0000007A                 EXPORT           ADC1SS2_Handler [WEAK]
-  583 0000007A E7FE            B                .
-  584 0000007C                 ENDP
-  585 0000007C         
-  587 0000007C         ADC1SS3_Handler
+  582 00000078                 EXPORT           ADC1SS2_Handler [WEAK]
+  583 00000078 E7FE            B                .
+  584 0000007A                 ENDP
+  585 0000007A         
+  587 0000007A         ADC1SS3_Handler
                                PROC
-  588 0000007C                 EXPORT           ADC1SS3_Handler [WEAK]
-  589 0000007C E7FE            B                .
-  590 0000007E                 ENDP
-  591 0000007E         
-  593 0000007E         GPIOJ_Handler
+  588 0000007A                 EXPORT           ADC1SS3_Handler [WEAK]
+  589 0000007A E7FE            B                .
+  590 0000007C                 ENDP
+  591 0000007C         
+  593 0000007C         GPIOJ_Handler
                                PROC
-  594 0000007E                 EXPORT           GPIOJ_Handler [WEAK]
-  595 0000007E E7FE            B                .
-  596 00000080                 ENDP
-  597 00000080         
-  599 00000080         GPIOK_Handler
+  594 0000007C                 EXPORT           GPIOJ_Handler [WEAK]
+  595 0000007C E7FE            B                .
+  596 0000007E                 ENDP
+  597 0000007E         
+  599 0000007E         GPIOK_Handler
                                PROC
-  600 00000080                 EXPORT           GPIOK_Handler [WEAK]
-  601 00000080 E7FE            B                .
-  602 00000082                 ENDP
-  603 00000082         
+  600 0000007E                 EXPORT           GPIOK_Handler [WEAK]
+  601 0000007E E7FE            B                .
+  602 00000080                 ENDP
+  603 00000080         
 
 
 
 ARM Macro Assembler    Page 14 
 
 
-  605 00000082         GPIOL_Handler
+  605 00000080         GPIOL_Handler
                                PROC
-  606 00000082                 EXPORT           GPIOL_Handler [WEAK]
-  607 00000082 E7FE            B                .
-  608 00000084                 ENDP
-  609 00000084         
-  611 00000084         SSI2_Handler
+  606 00000080                 EXPORT           GPIOL_Handler [WEAK]
+  607 00000080 E7FE            B                .
+  608 00000082                 ENDP
+  609 00000082         
+  611 00000082         SSI2_Handler
                                PROC
-  612 00000084                 EXPORT           SSI2_Handler [WEAK]
-  613 00000084 E7FE            B                .
-  614 00000086                 ENDP
-  615 00000086         
-  617 00000086         SSI3_Handler
+  612 00000082                 EXPORT           SSI2_Handler [WEAK]
+  613 00000082 E7FE            B                .
+  614 00000084                 ENDP
+  615 00000084         
+  617 00000084         SSI3_Handler
                                PROC
-  618 00000086                 EXPORT           SSI3_Handler [WEAK]
-  619 00000086 E7FE            B                .
-  620 00000088                 ENDP
-  621 00000088         
-  623 00000088         UART3_Handler
+  618 00000084                 EXPORT           SSI3_Handler [WEAK]
+  619 00000084 E7FE            B                .
+  620 00000086                 ENDP
+  621 00000086         
+  623 00000086         UART3_Handler
                                PROC
-  624 00000088                 EXPORT           UART3_Handler [WEAK]
-  625 00000088 E7FE            B                .
-  626 0000008A                 ENDP
-  627 0000008A         
-  629 0000008A         UART4_Handler
+  624 00000086                 EXPORT           UART3_Handler [WEAK]
+  625 00000086 E7FE            B                .
+  626 00000088                 ENDP
+  627 00000088         
+  629 00000088         UART4_Handler
                                PROC
-  630 0000008A                 EXPORT           UART4_Handler [WEAK]
-  631 0000008A E7FE            B                .
-  632 0000008C                 ENDP
-  633 0000008C         
-  635 0000008C         UART5_Handler
+  630 00000088                 EXPORT           UART4_Handler [WEAK]
+  631 00000088 E7FE            B                .
+  632 0000008A                 ENDP
+  633 0000008A         
+  635 0000008A         UART5_Handler
                                PROC
-  636 0000008C                 EXPORT           UART5_Handler [WEAK]
-  637 0000008C E7FE            B                .
-  638 0000008E                 ENDP
-  639 0000008E         
-  641 0000008E         UART6_Handler
+  636 0000008A                 EXPORT           UART5_Handler [WEAK]
+  637 0000008A E7FE            B                .
+  638 0000008C                 ENDP
+  639 0000008C         
+  641 0000008C         UART6_Handler
                                PROC
-  642 0000008E                 EXPORT           UART6_Handler [WEAK]
-  643 0000008E E7FE            B                .
-  644 00000090                 ENDP
-  645 00000090         
-  647 00000090         UART7_Handler
+  642 0000008C                 EXPORT           UART6_Handler [WEAK]
+  643 0000008C E7FE            B                .
+  644 0000008E                 ENDP
+  645 0000008E         
+  647 0000008E         UART7_Handler
                                PROC
-  648 00000090                 EXPORT           UART7_Handler [WEAK]
-  649 00000090 E7FE            B                .
-  650 00000092                 ENDP
-  651 00000092         
-  653 00000092         I2C2_Handler
+  648 0000008E                 EXPORT           UART7_Handler [WEAK]
+  649 0000008E E7FE            B                .
+  650 00000090                 ENDP
+  651 00000090         
+  653 00000090         I2C2_Handler
                                PROC
-  654 00000092                 EXPORT           I2C2_Handler [WEAK]
-  655 00000092 E7FE            B                .
-  656 00000094                 ENDP
-  657 00000094         
-  659 00000094         I2C3_Handler
+  654 00000090                 EXPORT           I2C2_Handler [WEAK]
+  655 00000090 E7FE            B                .
+  656 00000092                 ENDP
+  657 00000092         
+  659 00000092         I2C3_Handler
                                PROC
-  660 00000094                 EXPORT           I2C3_Handler [WEAK]
-  661 00000094 E7FE            B                .
-  662 00000096                 ENDP
+  660 00000092                 EXPORT           I2C3_Handler [WEAK]
+  661 00000092 E7FE            B                .
+  662 00000094                 ENDP
 
 
 
 ARM Macro Assembler    Page 15 
 
 
-  663 00000096         
-  665 00000096         TIMER4A_Handler
+  663 00000094         
+  665 00000094         TIMER4A_Handler
                                PROC
-  666 00000096                 EXPORT           TIMER4A_Handler [WEAK]
-  667 00000096 E7FE            B                .
-  668 00000098                 ENDP
-  669 00000098         
-  671 00000098         TIMER4B_Handler
+  666 00000094                 EXPORT           TIMER4A_Handler [WEAK]
+  667 00000094 E7FE            B                .
+  668 00000096                 ENDP
+  669 00000096         
+  671 00000096         TIMER4B_Handler
                                PROC
-  672 00000098                 EXPORT           TIMER4B_Handler [WEAK]
-  673 00000098 E7FE            B                .
-  674 0000009A                 ENDP
-  675 0000009A         
-  677 0000009A         TIMER5A_Handler
+  672 00000096                 EXPORT           TIMER4B_Handler [WEAK]
+  673 00000096 E7FE            B                .
+  674 00000098                 ENDP
+  675 00000098         
+  677 00000098         TIMER5A_Handler
                                PROC
-  678 0000009A                 EXPORT           TIMER5A_Handler [WEAK]
-  679 0000009A E7FE            B                .
-  680 0000009C                 ENDP
-  681 0000009C         
-  683 0000009C         TIMER5B_Handler
+  678 00000098                 EXPORT           TIMER5A_Handler [WEAK]
+  679 00000098 E7FE            B                .
+  680 0000009A                 ENDP
+  681 0000009A         
+  683 0000009A         TIMER5B_Handler
                                PROC
-  684 0000009C                 EXPORT           TIMER5B_Handler [WEAK]
-  685 0000009C E7FE            B                .
-  686 0000009E                 ENDP
-  687 0000009E         
-  689 0000009E         WTIMER0A_Handler
+  684 0000009A                 EXPORT           TIMER5B_Handler [WEAK]
+  685 0000009A E7FE            B                .
+  686 0000009C                 ENDP
+  687 0000009C         
+  689 0000009C         WTIMER0A_Handler
                                PROC
-  690 0000009E                 EXPORT           WTIMER0A_Handler [WEAK]
-  691 0000009E E7FE            B                .
-  692 000000A0                 ENDP
-  693 000000A0         
-  695 000000A0         WTIMER0B_Handler
+  690 0000009C                 EXPORT           WTIMER0A_Handler [WEAK]
+  691 0000009C E7FE            B                .
+  692 0000009E                 ENDP
+  693 0000009E         
+  695 0000009E         WTIMER0B_Handler
                                PROC
-  696 000000A0                 EXPORT           WTIMER0B_Handler [WEAK]
-  697 000000A0 E7FE            B                .
-  698 000000A2                 ENDP
-  699 000000A2         
-  701 000000A2         WTIMER1A_Handler
+  696 0000009E                 EXPORT           WTIMER0B_Handler [WEAK]
+  697 0000009E E7FE            B                .
+  698 000000A0                 ENDP
+  699 000000A0         
+  701 000000A0         WTIMER1A_Handler
                                PROC
-  702 000000A2                 EXPORT           WTIMER1A_Handler [WEAK]
-  703 000000A2 E7FE            B                .
-  704 000000A4                 ENDP
-  705 000000A4         
-  707 000000A4         WTIMER1B_Handler
+  702 000000A0                 EXPORT           WTIMER1A_Handler [WEAK]
+  703 000000A0 E7FE            B                .
+  704 000000A2                 ENDP
+  705 000000A2         
+  707 000000A2         WTIMER1B_Handler
                                PROC
-  708 000000A4                 EXPORT           WTIMER1B_Handler [WEAK]
-  709 000000A4 E7FE            B                .
-  710 000000A6                 ENDP
-  711 000000A6         
-  713 000000A6         WTIMER2A_Handler
+  708 000000A2                 EXPORT           WTIMER1B_Handler [WEAK]
+  709 000000A2 E7FE            B                .
+  710 000000A4                 ENDP
+  711 000000A4         
+  713 000000A4         WTIMER2A_Handler
                                PROC
-  714 000000A6                 EXPORT           WTIMER2A_Handler [WEAK]
-  715 000000A6 E7FE            B                .
-  716 000000A8                 ENDP
-  717 000000A8         
-  719 000000A8         WTIMER2B_Handler
+  714 000000A4                 EXPORT           WTIMER2A_Handler [WEAK]
+  715 000000A4 E7FE            B                .
+  716 000000A6                 ENDP
+  717 000000A6         
+  719 000000A6         WTIMER2B_Handler
                                PROC
-  720 000000A8                 EXPORT           WTIMER2B_Handler [WEAK]
-  721 000000A8 E7FE            B                .
+  720 000000A6                 EXPORT           WTIMER2B_Handler [WEAK]
+  721 000000A6 E7FE            B                .
 
 
 
 ARM Macro Assembler    Page 16 
 
 
-  722 000000AA                 ENDP
-  723 000000AA         
-  725 000000AA         WTIMER3A_Handler
+  722 000000A8                 ENDP
+  723 000000A8         
+  725 000000A8         WTIMER3A_Handler
                                PROC
-  726 000000AA                 EXPORT           WTIMER3A_Handler [WEAK]
-  727 000000AA E7FE            B                .
-  728 000000AC                 ENDP
-  729 000000AC         
-  731 000000AC         WTIMER3B_Handler
+  726 000000A8                 EXPORT           WTIMER3A_Handler [WEAK]
+  727 000000A8 E7FE            B                .
+  728 000000AA                 ENDP
+  729 000000AA         
+  731 000000AA         WTIMER3B_Handler
                                PROC
-  732 000000AC                 EXPORT           WTIMER3B_Handler [WEAK]
-  733 000000AC E7FE            B                .
-  734 000000AE                 ENDP
-  735 000000AE         
-  737 000000AE         WTIMER4A_Handler
+  732 000000AA                 EXPORT           WTIMER3B_Handler [WEAK]
+  733 000000AA E7FE            B                .
+  734 000000AC                 ENDP
+  735 000000AC         
+  737 000000AC         WTIMER4A_Handler
                                PROC
-  738 000000AE                 EXPORT           WTIMER4A_Handler [WEAK]
-  739 000000AE E7FE            B                .
-  740 000000B0                 ENDP
-  741 000000B0         
-  743 000000B0         WTIMER4B_Handler
+  738 000000AC                 EXPORT           WTIMER4A_Handler [WEAK]
+  739 000000AC E7FE            B                .
+  740 000000AE                 ENDP
+  741 000000AE         
+  743 000000AE         WTIMER4B_Handler
                                PROC
-  744 000000B0                 EXPORT           WTIMER4B_Handler [WEAK]
-  745 000000B0 E7FE            B                .
-  746 000000B2                 ENDP
-  747 000000B2         
-  749 000000B2         WTIMER5A_Handler
+  744 000000AE                 EXPORT           WTIMER4B_Handler [WEAK]
+  745 000000AE E7FE            B                .
+  746 000000B0                 ENDP
+  747 000000B0         
+  749 000000B0         WTIMER5A_Handler
                                PROC
-  750 000000B2                 EXPORT           WTIMER5A_Handler [WEAK]
-  751 000000B2 E7FE            B                .
-  752 000000B4                 ENDP
-  753 000000B4         
-  755 000000B4         WTIMER5B_Handler
+  750 000000B0                 EXPORT           WTIMER5A_Handler [WEAK]
+  751 000000B0 E7FE            B                .
+  752 000000B2                 ENDP
+  753 000000B2         
+  755 000000B2         WTIMER5B_Handler
                                PROC
-  756 000000B4                 EXPORT           WTIMER5B_Handler [WEAK]
-  757 000000B4 E7FE            B                .
-  758 000000B6                 ENDP
-  759 000000B6         
-  761 000000B6         FPU_Handler
+  756 000000B2                 EXPORT           WTIMER5B_Handler [WEAK]
+  757 000000B2 E7FE            B                .
+  758 000000B4                 ENDP
+  759 000000B4         
+  761 000000B4         FPU_Handler
                                PROC
-  762 000000B6                 EXPORT           FPU_Handler [WEAK]
-  763 000000B6 E7FE            B                .
-  764 000000B8                 ENDP
-  765 000000B8         
-  767 000000B8         I2C4_Handler
+  762 000000B4                 EXPORT           FPU_Handler [WEAK]
+  763 000000B4 E7FE            B                .
+  764 000000B6                 ENDP
+  765 000000B6         
+  767 000000B6         I2C4_Handler
                                PROC
-  768 000000B8                 EXPORT           I2C4_Handler [WEAK]
-  769 000000B8 E7FE            B                .
-  770 000000BA                 ENDP
-  771 000000BA         
-  773 000000BA         I2C5_Handler
+  768 000000B6                 EXPORT           I2C4_Handler [WEAK]
+  769 000000B6 E7FE            B                .
+  770 000000B8                 ENDP
+  771 000000B8         
+  773 000000B8         I2C5_Handler
                                PROC
-  774 000000BA                 EXPORT           I2C5_Handler [WEAK]
-  775 000000BA E7FE            B                .
-  776 000000BC                 ENDP
-  777 000000BC         
-  779 000000BC         GPIOM_Handler
+  774 000000B8                 EXPORT           I2C5_Handler [WEAK]
+  775 000000B8 E7FE            B                .
+  776 000000BA                 ENDP
+  777 000000BA         
+  779 000000BA         GPIOM_Handler
                                PROC
-  780 000000BC                 EXPORT           GPIOM_Handler [WEAK]
+  780 000000BA                 EXPORT           GPIOM_Handler [WEAK]
 
 
 
 ARM Macro Assembler    Page 17 
 
 
-  781 000000BC E7FE            B                .
-  782 000000BE                 ENDP
-  783 000000BE         
-  785 000000BE         GPION_Handler
+  781 000000BA E7FE            B                .
+  782 000000BC                 ENDP
+  783 000000BC         
+  785 000000BC         GPION_Handler
                                PROC
-  786 000000BE                 EXPORT           GPION_Handler [WEAK]
-  787 000000BE E7FE            B                .
-  788 000000C0                 ENDP
-  789 000000C0         
-  791 000000C0         QEI2_Handler
+  786 000000BC                 EXPORT           GPION_Handler [WEAK]
+  787 000000BC E7FE            B                .
+  788 000000BE                 ENDP
+  789 000000BE         
+  791 000000BE         QEI2_Handler
                                PROC
-  792 000000C0                 EXPORT           QEI2_Handler [WEAK]
-  793 000000C0 E7FE            B                .
-  794 000000C2                 ENDP
-  795 000000C2         
-  797 000000C2         GPIOP0_Handler
+  792 000000BE                 EXPORT           QEI2_Handler [WEAK]
+  793 000000BE E7FE            B                .
+  794 000000C0                 ENDP
+  795 000000C0         
+  797 000000C0         GPIOP0_Handler
                                PROC
-  798 000000C2                 EXPORT           GPIOP0_Handler [WEAK]
-  799 000000C2 E7FE            B                .
-  800 000000C4                 ENDP
-  801 000000C4         
-  803 000000C4         GPIOP1_Handler
+  798 000000C0                 EXPORT           GPIOP0_Handler [WEAK]
+  799 000000C0 E7FE            B                .
+  800 000000C2                 ENDP
+  801 000000C2         
+  803 000000C2         GPIOP1_Handler
                                PROC
-  804 000000C4                 EXPORT           GPIOP1_Handler [WEAK]
-  805 000000C4 E7FE            B                .
-  806 000000C6                 ENDP
-  807 000000C6         
-  809 000000C6         GPIOP2_Handler
+  804 000000C2                 EXPORT           GPIOP1_Handler [WEAK]
+  805 000000C2 E7FE            B                .
+  806 000000C4                 ENDP
+  807 000000C4         
+  809 000000C4         GPIOP2_Handler
                                PROC
-  810 000000C6                 EXPORT           GPIOP2_Handler [WEAK]
-  811 000000C6 E7FE            B                .
-  812 000000C8                 ENDP
-  813 000000C8         
-  815 000000C8         GPIOP3_Handler
+  810 000000C4                 EXPORT           GPIOP2_Handler [WEAK]
+  811 000000C4 E7FE            B                .
+  812 000000C6                 ENDP
+  813 000000C6         
+  815 000000C6         GPIOP3_Handler
                                PROC
-  816 000000C8                 EXPORT           GPIOP3_Handler [WEAK]
-  817 000000C8 E7FE            B                .
-  818 000000CA                 ENDP
-  819 000000CA         
-  821 000000CA         GPIOP4_Handler
+  816 000000C6                 EXPORT           GPIOP3_Handler [WEAK]
+  817 000000C6 E7FE            B                .
+  818 000000C8                 ENDP
+  819 000000C8         
+  821 000000C8         GPIOP4_Handler
                                PROC
-  822 000000CA                 EXPORT           GPIOP4_Handler [WEAK]
-  823 000000CA E7FE            B                .
-  824 000000CC                 ENDP
-  825 000000CC         
-  827 000000CC         GPIOP5_Handler
+  822 000000C8                 EXPORT           GPIOP4_Handler [WEAK]
+  823 000000C8 E7FE            B                .
+  824 000000CA                 ENDP
+  825 000000CA         
+  827 000000CA         GPIOP5_Handler
                                PROC
-  828 000000CC                 EXPORT           GPIOP5_Handler [WEAK]
-  829 000000CC E7FE            B                .
-  830 000000CE                 ENDP
-  831 000000CE         
-  833 000000CE         GPIOP6_Handler
+  828 000000CA                 EXPORT           GPIOP5_Handler [WEAK]
+  829 000000CA E7FE            B                .
+  830 000000CC                 ENDP
+  831 000000CC         
+  833 000000CC         GPIOP6_Handler
                                PROC
-  834 000000CE                 EXPORT           GPIOP6_Handler [WEAK]
-  835 000000CE E7FE            B                .
-  836 000000D0                 ENDP
-  837 000000D0         
-  839 000000D0         GPIOP7_Handler
+  834 000000CC                 EXPORT           GPIOP6_Handler [WEAK]
+  835 000000CC E7FE            B                .
+  836 000000CE                 ENDP
+  837 000000CE         
+  839 000000CE         GPIOP7_Handler
                                PROC
 
 
@@ -1109,65 +1109,65 @@ ARM Macro Assembler    Page 17
 ARM Macro Assembler    Page 18 
 
 
-  840 000000D0                 EXPORT           GPIOP7_Handler [WEAK]
-  841 000000D0 E7FE            B                .
-  842 000000D2                 ENDP
-  843 000000D2         
-  845 000000D2         GPIOQ0_Handler
+  840 000000CE                 EXPORT           GPIOP7_Handler [WEAK]
+  841 000000CE E7FE            B                .
+  842 000000D0                 ENDP
+  843 000000D0         
+  845 000000D0         GPIOQ0_Handler
                                PROC
-  846 000000D2                 EXPORT           GPIOQ0_Handler [WEAK]
-  847 000000D2 E7FE            B                .
-  848 000000D4                 ENDP
-  849 000000D4         
-  851 000000D4         GPIOQ1_Handler
+  846 000000D0                 EXPORT           GPIOQ0_Handler [WEAK]
+  847 000000D0 E7FE            B                .
+  848 000000D2                 ENDP
+  849 000000D2         
+  851 000000D2         GPIOQ1_Handler
                                PROC
-  852 000000D4                 EXPORT           GPIOQ1_Handler [WEAK]
-  853 000000D4 E7FE            B                .
-  854 000000D6                 ENDP
-  855 000000D6         
-  857 000000D6         GPIOQ2_Handler
+  852 000000D2                 EXPORT           GPIOQ1_Handler [WEAK]
+  853 000000D2 E7FE            B                .
+  854 000000D4                 ENDP
+  855 000000D4         
+  857 000000D4         GPIOQ2_Handler
                                PROC
-  858 000000D6                 EXPORT           GPIOQ2_Handler [WEAK]
-  859 000000D6 E7FE            B                .
-  860 000000D8                 ENDP
-  861 000000D8         
-  863 000000D8         GPIOQ3_Handler
+  858 000000D4                 EXPORT           GPIOQ2_Handler [WEAK]
+  859 000000D4 E7FE            B                .
+  860 000000D6                 ENDP
+  861 000000D6         
+  863 000000D6         GPIOQ3_Handler
                                PROC
-  864 000000D8                 EXPORT           GPIOQ3_Handler [WEAK]
-  865 000000D8 E7FE            B                .
-  866 000000DA                 ENDP
-  867 000000DA         
-  869 000000DA         GPIOQ4_Handler
+  864 000000D6                 EXPORT           GPIOQ3_Handler [WEAK]
+  865 000000D6 E7FE            B                .
+  866 000000D8                 ENDP
+  867 000000D8         
+  869 000000D8         GPIOQ4_Handler
                                PROC
-  870 000000DA                 EXPORT           GPIOQ4_Handler [WEAK]
-  871 000000DA E7FE            B                .
-  872 000000DC                 ENDP
-  873 000000DC         
-  875 000000DC         GPIOQ5_Handler
+  870 000000D8                 EXPORT           GPIOQ4_Handler [WEAK]
+  871 000000D8 E7FE            B                .
+  872 000000DA                 ENDP
+  873 000000DA         
+  875 000000DA         GPIOQ5_Handler
                                PROC
-  876 000000DC                 EXPORT           GPIOQ5_Handler [WEAK]
-  877 000000DC E7FE            B                .
-  878 000000DE                 ENDP
-  879 000000DE         
-  881 000000DE         GPIOQ6_Handler
+  876 000000DA                 EXPORT           GPIOQ5_Handler [WEAK]
+  877 000000DA E7FE            B                .
+  878 000000DC                 ENDP
+  879 000000DC         
+  881 000000DC         GPIOQ6_Handler
                                PROC
-  882 000000DE                 EXPORT           GPIOQ6_Handler [WEAK]
-  883 000000DE E7FE            B                .
-  884 000000E0                 ENDP
-  885 000000E0         
-  887 000000E0         GPIOQ7_Handler
+  882 000000DC                 EXPORT           GPIOQ6_Handler [WEAK]
+  883 000000DC E7FE            B                .
+  884 000000DE                 ENDP
+  885 000000DE         
+  887 000000DE         GPIOQ7_Handler
                                PROC
-  888 000000E0                 EXPORT           GPIOQ7_Handler [WEAK]
-  889 000000E0 E7FE            B                .
-  890 000000E2                 ENDP
-  891 000000E2         
-  893 000000E2         GPIOR_Handler
+  888 000000DE                 EXPORT           GPIOQ7_Handler [WEAK]
+  889 000000DE E7FE            B                .
+  890 000000E0                 ENDP
+  891 000000E0         
+  893 000000E0         GPIOR_Handler
                                PROC
-  894 000000E2                 EXPORT           GPIOR_Handler [WEAK]
-  895 000000E2 E7FE            B                .
-  896 000000E4                 ENDP
-  897 000000E4         
-  899 000000E4         GPIOS_Handler
+  894 000000E0                 EXPORT           GPIOR_Handler [WEAK]
+  895 000000E0 E7FE            B                .
+  896 000000E2                 ENDP
+  897 000000E2         
+  899 000000E2         GPIOS_Handler
 
 
 
@@ -1175,41 +1175,41 @@ ARM Macro Assembler    Page 19
 
 
                                PROC
-  900 000000E4                 EXPORT           GPIOS_Handler [WEAK]
-  901 000000E4 E7FE            B                .
-  902 000000E6                 ENDP
-  903 000000E6         
-  905 000000E6         PMW1_0_Handler
+  900 000000E2                 EXPORT           GPIOS_Handler [WEAK]
+  901 000000E2 E7FE            B                .
+  902 000000E4                 ENDP
+  903 000000E4         
+  905 000000E4         PMW1_0_Handler
                                PROC
-  906 000000E6                 EXPORT           PMW1_0_Handler [WEAK]
-  907 000000E6 E7FE            B                .
-  908 000000E8                 ENDP
-  909 000000E8         
-  911 000000E8         PWM1_1_Handler
+  906 000000E4                 EXPORT           PMW1_0_Handler [WEAK]
+  907 000000E4 E7FE            B                .
+  908 000000E6                 ENDP
+  909 000000E6         
+  911 000000E6         PWM1_1_Handler
                                PROC
-  912 000000E8                 EXPORT           PWM1_1_Handler [WEAK]
-  913 000000E8 E7FE            B                .
-  914 000000EA                 ENDP
-  915 000000EA         
-  917 000000EA         PWM1_2_Handler
+  912 000000E6                 EXPORT           PWM1_1_Handler [WEAK]
+  913 000000E6 E7FE            B                .
+  914 000000E8                 ENDP
+  915 000000E8         
+  917 000000E8         PWM1_2_Handler
                                PROC
-  918 000000EA                 EXPORT           PWM1_2_Handler [WEAK]
-  919 000000EA E7FE            B                .
-  920 000000EC                 ENDP
-  921 000000EC         
-  923 000000EC         PWM1_3_Handler
+  918 000000E8                 EXPORT           PWM1_2_Handler [WEAK]
+  919 000000E8 E7FE            B                .
+  920 000000EA                 ENDP
+  921 000000EA         
+  923 000000EA         PWM1_3_Handler
                                PROC
-  924 000000EC                 EXPORT           PWM1_3_Handler [WEAK]
-  925 000000EC E7FE            B                .
-  926 000000EE                 ENDP
-  927 000000EE         
-  929 000000EE         PWM1_FAULT_Handler
+  924 000000EA                 EXPORT           PWM1_3_Handler [WEAK]
+  925 000000EA E7FE            B                .
+  926 000000EC                 ENDP
+  927 000000EC         
+  929 000000EC         PWM1_FAULT_Handler
                                PROC
-  930 000000EE                 EXPORT           PWM1_FAULT_Handler [WEAK]
-  931 000000EE E7FE            B                .
-  932 000000F0                 ENDP
-  933 000000F0         
-  934 000000F0                 ALIGN
+  930 000000EC                 EXPORT           PWM1_FAULT_Handler [WEAK]
+  931 000000EC E7FE            B                .
+  932 000000EE                 ENDP
+  933 000000EE         
+  934 000000EE 00 00           ALIGN
   935 000000F0         
   936 000000F0         
   937 000000F0         ; User Initial Stack & Heap
@@ -1220,10 +1220,10 @@ ARM Macro Assembler    Page 19
   948 000000F0                 EXPORT           __user_initial_stackheap
   949 000000F0         __user_initial_stackheap
   950 000000F0         
-  951 000000F0 4803            LDR              R0, =  Heap_Mem
-  952 000000F2 4904            LDR              R1, =(Stack_Mem + Stack_Size)
-  953 000000F4 4A02            LDR              R2, = (Heap_Mem +  Heap_Size)
-  954 000000F6 4B04            LDR              R3, = Stack_Mem
+  951 000000F0 4802            LDR              R0, =  Heap_Mem
+  952 000000F2 4903            LDR              R1, =(Stack_Mem + Stack_Size)
+  953 000000F4 4A01            LDR              R2, = (Heap_Mem +  Heap_Size)
+  954 000000F6 4B03            LDR              R3, = Stack_Mem
   955 000000F8 4770            BX               LR
   956 000000FA         
   957 000000FA 00 00           ALIGN
@@ -1239,7 +1239,6 @@ ARM Macro Assembler    Page 19
 ARM Macro Assembler    Page 20 
 
 
-              00000000 
               00000200 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\sta
@@ -1366,7 +1365,7 @@ Symbol: .text
    Uses
       None
 Comment: .text unused
-ADC0SS0_Handler 00000034
+ADC0SS0_Handler 00000032
 
 Symbol: ADC0SS0_Handler
    Definitions
@@ -1375,7 +1374,7 @@ Symbol: ADC0SS0_Handler
       At line 96 in file startup_TM4C123.s
       At line 372 in file startup_TM4C123.s
 
-ADC0SS1_Handler 00000036
+ADC0SS1_Handler 00000034
 
 Symbol: ADC0SS1_Handler
    Definitions
@@ -1384,7 +1383,7 @@ Symbol: ADC0SS1_Handler
       At line 97 in file startup_TM4C123.s
       At line 378 in file startup_TM4C123.s
 
-ADC0SS2_Handler 00000038
+ADC0SS2_Handler 00000036
 
 Symbol: ADC0SS2_Handler
    Definitions
@@ -1393,7 +1392,7 @@ Symbol: ADC0SS2_Handler
       At line 98 in file startup_TM4C123.s
       At line 384 in file startup_TM4C123.s
 
-ADC0SS3_Handler 0000003A
+ADC0SS3_Handler 00000038
 
 Symbol: ADC0SS3_Handler
    Definitions
@@ -1402,7 +1401,7 @@ Symbol: ADC0SS3_Handler
       At line 99 in file startup_TM4C123.s
       At line 390 in file startup_TM4C123.s
 
-ADC1SS0_Handler 00000076
+ADC1SS0_Handler 00000074
 
 Symbol: ADC1SS0_Handler
    Definitions
@@ -1411,7 +1410,7 @@ Symbol: ADC1SS0_Handler
       At line 130 in file startup_TM4C123.s
       At line 570 in file startup_TM4C123.s
 
-ADC1SS1_Handler 00000078
+ADC1SS1_Handler 00000076
 
 Symbol: ADC1SS1_Handler
    Definitions
@@ -1426,7 +1425,7 @@ Relocatable symbols
       At line 131 in file startup_TM4C123.s
       At line 576 in file startup_TM4C123.s
 
-ADC1SS2_Handler 0000007A
+ADC1SS2_Handler 00000078
 
 Symbol: ADC1SS2_Handler
    Definitions
@@ -1435,7 +1434,7 @@ Symbol: ADC1SS2_Handler
       At line 132 in file startup_TM4C123.s
       At line 582 in file startup_TM4C123.s
 
-ADC1SS3_Handler 0000007C
+ADC1SS3_Handler 0000007A
 
 Symbol: ADC1SS3_Handler
    Definitions
@@ -1444,7 +1443,7 @@ Symbol: ADC1SS3_Handler
       At line 133 in file startup_TM4C123.s
       At line 588 in file startup_TM4C123.s
 
-BusFault_Handler 0000000C
+BusFault_Handler 0000000A
 
 Symbol: BusFault_Handler
    Definitions
@@ -1453,7 +1452,7 @@ Symbol: BusFault_Handler
       At line 68 in file startup_TM4C123.s
       At line 258 in file startup_TM4C123.s
 
-CAN0_Handler 00000066
+CAN0_Handler 00000064
 
 Symbol: CAN0_Handler
    Definitions
@@ -1462,7 +1461,7 @@ Symbol: CAN0_Handler
       At line 121 in file startup_TM4C123.s
       At line 522 in file startup_TM4C123.s
 
-CAN1_Handler 00000068
+CAN1_Handler 00000066
 
 Symbol: CAN1_Handler
    Definitions
@@ -1471,7 +1470,7 @@ Symbol: CAN1_Handler
       At line 122 in file startup_TM4C123.s
       At line 528 in file startup_TM4C123.s
 
-CAN2_Handler 0000006A
+CAN2_Handler 00000068
 
 Symbol: CAN2_Handler
    Definitions
@@ -1480,7 +1479,7 @@ Symbol: CAN2_Handler
       At line 123 in file startup_TM4C123.s
       At line 534 in file startup_TM4C123.s
 
-COMP0_Handler 0000004A
+COMP0_Handler 00000048
 
 
 
@@ -1495,7 +1494,7 @@ Symbol: COMP0_Handler
       At line 107 in file startup_TM4C123.s
       At line 438 in file startup_TM4C123.s
 
-COMP1_Handler 0000004C
+COMP1_Handler 0000004A
 
 Symbol: COMP1_Handler
    Definitions
@@ -1504,7 +1503,7 @@ Symbol: COMP1_Handler
       At line 108 in file startup_TM4C123.s
       At line 444 in file startup_TM4C123.s
 
-COMP2_Handler 0000004E
+COMP2_Handler 0000004C
 
 Symbol: COMP2_Handler
    Definitions
@@ -1513,7 +1512,7 @@ Symbol: COMP2_Handler
       At line 109 in file startup_TM4C123.s
       At line 450 in file startup_TM4C123.s
 
-DebugMon_Handler 00000012
+DebugMon_Handler 00000010
 
 Symbol: DebugMon_Handler
    Definitions
@@ -1522,7 +1521,7 @@ Symbol: DebugMon_Handler
       At line 75 in file startup_TM4C123.s
       At line 272 in file startup_TM4C123.s
 
-FLASH_Handler 00000052
+FLASH_Handler 00000050
 
 Symbol: FLASH_Handler
    Definitions
@@ -1531,7 +1530,7 @@ Symbol: FLASH_Handler
       At line 111 in file startup_TM4C123.s
       At line 462 in file startup_TM4C123.s
 
-FPU_Handler 000000B6
+FPU_Handler 000000B4
 
 Symbol: FPU_Handler
    Definitions
@@ -1540,7 +1539,7 @@ Symbol: FPU_Handler
       At line 188 in file startup_TM4C123.s
       At line 762 in file startup_TM4C123.s
 
-GPIOA_Handler 00000018
+GPIOA_Handler 00000016
 
 Symbol: GPIOA_Handler
    Definitions
@@ -1555,7 +1554,7 @@ Relocatable symbols
 
       At line 288 in file startup_TM4C123.s
 
-GPIOB_Handler 0000001A
+GPIOB_Handler 00000018
 
 Symbol: GPIOB_Handler
    Definitions
@@ -1564,7 +1563,7 @@ Symbol: GPIOB_Handler
       At line 83 in file startup_TM4C123.s
       At line 294 in file startup_TM4C123.s
 
-GPIOC_Handler 0000001C
+GPIOC_Handler 0000001A
 
 Symbol: GPIOC_Handler
    Definitions
@@ -1573,7 +1572,7 @@ Symbol: GPIOC_Handler
       At line 84 in file startup_TM4C123.s
       At line 300 in file startup_TM4C123.s
 
-GPIOD_Handler 0000001E
+GPIOD_Handler 0000001C
 
 Symbol: GPIOD_Handler
    Definitions
@@ -1582,7 +1581,7 @@ Symbol: GPIOD_Handler
       At line 85 in file startup_TM4C123.s
       At line 306 in file startup_TM4C123.s
 
-GPIOE_Handler 00000020
+GPIOE_Handler 0000001E
 
 Symbol: GPIOE_Handler
    Definitions
@@ -1591,7 +1590,7 @@ Symbol: GPIOE_Handler
       At line 86 in file startup_TM4C123.s
       At line 312 in file startup_TM4C123.s
 
-GPIOF_Handler 00000054
+GPIOF_Handler 00000052
 
 Symbol: GPIOF_Handler
    Definitions
@@ -1600,7 +1599,7 @@ Symbol: GPIOF_Handler
       At line 112 in file startup_TM4C123.s
       At line 468 in file startup_TM4C123.s
 
-GPIOG_Handler 00000056
+GPIOG_Handler 00000054
 
 Symbol: GPIOG_Handler
    Definitions
@@ -1609,7 +1608,7 @@ Symbol: GPIOG_Handler
       At line 113 in file startup_TM4C123.s
       At line 474 in file startup_TM4C123.s
 
-GPIOH_Handler 00000058
+GPIOH_Handler 00000056
 
 Symbol: GPIOH_Handler
 
@@ -1624,7 +1623,7 @@ Relocatable symbols
       At line 114 in file startup_TM4C123.s
       At line 480 in file startup_TM4C123.s
 
-GPIOJ_Handler 0000007E
+GPIOJ_Handler 0000007C
 
 Symbol: GPIOJ_Handler
    Definitions
@@ -1633,7 +1632,7 @@ Symbol: GPIOJ_Handler
       At line 136 in file startup_TM4C123.s
       At line 594 in file startup_TM4C123.s
 
-GPIOK_Handler 00000080
+GPIOK_Handler 0000007E
 
 Symbol: GPIOK_Handler
    Definitions
@@ -1642,7 +1641,7 @@ Symbol: GPIOK_Handler
       At line 137 in file startup_TM4C123.s
       At line 600 in file startup_TM4C123.s
 
-GPIOL_Handler 00000082
+GPIOL_Handler 00000080
 
 Symbol: GPIOL_Handler
    Definitions
@@ -1651,7 +1650,7 @@ Symbol: GPIOL_Handler
       At line 138 in file startup_TM4C123.s
       At line 606 in file startup_TM4C123.s
 
-GPIOM_Handler 000000BC
+GPIOM_Handler 000000BA
 
 Symbol: GPIOM_Handler
    Definitions
@@ -1660,7 +1659,7 @@ Symbol: GPIOM_Handler
       At line 193 in file startup_TM4C123.s
       At line 780 in file startup_TM4C123.s
 
-GPION_Handler 000000BE
+GPION_Handler 000000BC
 
 Symbol: GPION_Handler
    Definitions
@@ -1669,7 +1668,7 @@ Symbol: GPION_Handler
       At line 194 in file startup_TM4C123.s
       At line 786 in file startup_TM4C123.s
 
-GPIOP0_Handler 000000C2
+GPIOP0_Handler 000000C0
 
 Symbol: GPIOP0_Handler
    Definitions
@@ -1684,7 +1683,7 @@ ARM Macro Assembler    Page 6 Alphabetic symbol ordering
 Relocatable symbols
 
 
-GPIOP1_Handler 000000C4
+GPIOP1_Handler 000000C2
 
 Symbol: GPIOP1_Handler
    Definitions
@@ -1693,7 +1692,7 @@ Symbol: GPIOP1_Handler
       At line 199 in file startup_TM4C123.s
       At line 804 in file startup_TM4C123.s
 
-GPIOP2_Handler 000000C6
+GPIOP2_Handler 000000C4
 
 Symbol: GPIOP2_Handler
    Definitions
@@ -1702,7 +1701,7 @@ Symbol: GPIOP2_Handler
       At line 200 in file startup_TM4C123.s
       At line 810 in file startup_TM4C123.s
 
-GPIOP3_Handler 000000C8
+GPIOP3_Handler 000000C6
 
 Symbol: GPIOP3_Handler
    Definitions
@@ -1711,7 +1710,7 @@ Symbol: GPIOP3_Handler
       At line 201 in file startup_TM4C123.s
       At line 816 in file startup_TM4C123.s
 
-GPIOP4_Handler 000000CA
+GPIOP4_Handler 000000C8
 
 Symbol: GPIOP4_Handler
    Definitions
@@ -1720,7 +1719,7 @@ Symbol: GPIOP4_Handler
       At line 202 in file startup_TM4C123.s
       At line 822 in file startup_TM4C123.s
 
-GPIOP5_Handler 000000CC
+GPIOP5_Handler 000000CA
 
 Symbol: GPIOP5_Handler
    Definitions
@@ -1729,7 +1728,7 @@ Symbol: GPIOP5_Handler
       At line 203 in file startup_TM4C123.s
       At line 828 in file startup_TM4C123.s
 
-GPIOP6_Handler 000000CE
+GPIOP6_Handler 000000CC
 
 Symbol: GPIOP6_Handler
    Definitions
@@ -1738,7 +1737,7 @@ Symbol: GPIOP6_Handler
       At line 204 in file startup_TM4C123.s
       At line 834 in file startup_TM4C123.s
 
-GPIOP7_Handler 000000D0
+GPIOP7_Handler 000000CE
 
 Symbol: GPIOP7_Handler
    Definitions
@@ -1753,7 +1752,7 @@ Relocatable symbols
       At line 205 in file startup_TM4C123.s
       At line 840 in file startup_TM4C123.s
 
-GPIOQ0_Handler 000000D2
+GPIOQ0_Handler 000000D0
 
 Symbol: GPIOQ0_Handler
    Definitions
@@ -1762,7 +1761,7 @@ Symbol: GPIOQ0_Handler
       At line 206 in file startup_TM4C123.s
       At line 846 in file startup_TM4C123.s
 
-GPIOQ1_Handler 000000D4
+GPIOQ1_Handler 000000D2
 
 Symbol: GPIOQ1_Handler
    Definitions
@@ -1771,7 +1770,7 @@ Symbol: GPIOQ1_Handler
       At line 207 in file startup_TM4C123.s
       At line 852 in file startup_TM4C123.s
 
-GPIOQ2_Handler 000000D6
+GPIOQ2_Handler 000000D4
 
 Symbol: GPIOQ2_Handler
    Definitions
@@ -1780,7 +1779,7 @@ Symbol: GPIOQ2_Handler
       At line 208 in file startup_TM4C123.s
       At line 858 in file startup_TM4C123.s
 
-GPIOQ3_Handler 000000D8
+GPIOQ3_Handler 000000D6
 
 Symbol: GPIOQ3_Handler
    Definitions
@@ -1789,7 +1788,7 @@ Symbol: GPIOQ3_Handler
       At line 209 in file startup_TM4C123.s
       At line 864 in file startup_TM4C123.s
 
-GPIOQ4_Handler 000000DA
+GPIOQ4_Handler 000000D8
 
 Symbol: GPIOQ4_Handler
    Definitions
@@ -1798,7 +1797,7 @@ Symbol: GPIOQ4_Handler
       At line 210 in file startup_TM4C123.s
       At line 870 in file startup_TM4C123.s
 
-GPIOQ5_Handler 000000DC
+GPIOQ5_Handler 000000DA
 
 Symbol: GPIOQ5_Handler
    Definitions
@@ -1813,7 +1812,7 @@ Symbol: GPIOQ5_Handler
 ARM Macro Assembler    Page 8 Alphabetic symbol ordering
 Relocatable symbols
 
-GPIOQ6_Handler 000000DE
+GPIOQ6_Handler 000000DC
 
 Symbol: GPIOQ6_Handler
    Definitions
@@ -1822,7 +1821,7 @@ Symbol: GPIOQ6_Handler
       At line 212 in file startup_TM4C123.s
       At line 882 in file startup_TM4C123.s
 
-GPIOQ7_Handler 000000E0
+GPIOQ7_Handler 000000DE
 
 Symbol: GPIOQ7_Handler
    Definitions
@@ -1831,7 +1830,7 @@ Symbol: GPIOQ7_Handler
       At line 213 in file startup_TM4C123.s
       At line 888 in file startup_TM4C123.s
 
-GPIOR_Handler 000000E2
+GPIOR_Handler 000000E0
 
 Symbol: GPIOR_Handler
    Definitions
@@ -1840,7 +1839,7 @@ Symbol: GPIOR_Handler
       At line 214 in file startup_TM4C123.s
       At line 894 in file startup_TM4C123.s
 
-GPIOS_Handler 000000E4
+GPIOS_Handler 000000E2
 
 Symbol: GPIOS_Handler
    Definitions
@@ -1849,7 +1848,7 @@ Symbol: GPIOS_Handler
       At line 215 in file startup_TM4C123.s
       At line 900 in file startup_TM4C123.s
 
-HIB_Handler 0000006C
+HIB_Handler 0000006A
 
 Symbol: HIB_Handler
    Definitions
@@ -1858,7 +1857,7 @@ Symbol: HIB_Handler
       At line 125 in file startup_TM4C123.s
       At line 540 in file startup_TM4C123.s
 
-HardFault_Handler 00000008
+HardFault_Handler 00000006
 
 Symbol: HardFault_Handler
    Definitions
@@ -1867,7 +1866,7 @@ Symbol: HardFault_Handler
       At line 66 in file startup_TM4C123.s
       At line 248 in file startup_TM4C123.s
 
-I2C0_Handler 00000028
+I2C0_Handler 00000026
 
 Symbol: I2C0_Handler
    Definitions
@@ -1882,7 +1881,7 @@ Relocatable symbols
       At line 90 in file startup_TM4C123.s
       At line 336 in file startup_TM4C123.s
 
-I2C1_Handler 00000062
+I2C1_Handler 00000060
 
 Symbol: I2C1_Handler
    Definitions
@@ -1891,7 +1890,7 @@ Symbol: I2C1_Handler
       At line 119 in file startup_TM4C123.s
       At line 510 in file startup_TM4C123.s
 
-I2C2_Handler 00000092
+I2C2_Handler 00000090
 
 Symbol: I2C2_Handler
    Definitions
@@ -1900,7 +1899,7 @@ Symbol: I2C2_Handler
       At line 150 in file startup_TM4C123.s
       At line 654 in file startup_TM4C123.s
 
-I2C3_Handler 00000094
+I2C3_Handler 00000092
 
 Symbol: I2C3_Handler
    Definitions
@@ -1909,7 +1908,7 @@ Symbol: I2C3_Handler
       At line 151 in file startup_TM4C123.s
       At line 660 in file startup_TM4C123.s
 
-I2C4_Handler 000000B8
+I2C4_Handler 000000B6
 
 Symbol: I2C4_Handler
    Definitions
@@ -1918,7 +1917,7 @@ Symbol: I2C4_Handler
       At line 191 in file startup_TM4C123.s
       At line 768 in file startup_TM4C123.s
 
-I2C5_Handler 000000BA
+I2C5_Handler 000000B8
 
 Symbol: I2C5_Handler
    Definitions
@@ -1927,7 +1926,7 @@ Symbol: I2C5_Handler
       At line 192 in file startup_TM4C123.s
       At line 774 in file startup_TM4C123.s
 
-MemManage_Handler 0000000A
+MemManage_Handler 00000008
 
 Symbol: MemManage_Handler
    Definitions
@@ -1936,7 +1935,7 @@ Symbol: MemManage_Handler
       At line 67 in file startup_TM4C123.s
       At line 253 in file startup_TM4C123.s
 
-NMI_Handler 00000006
+NMI_Handler 00000004
 
 
 
@@ -1951,7 +1950,7 @@ Symbol: NMI_Handler
       At line 65 in file startup_TM4C123.s
       At line 243 in file startup_TM4C123.s
 
-PMW0_FAULT_Handler 0000002A
+PMW0_FAULT_Handler 00000028
 
 Symbol: PMW0_FAULT_Handler
    Definitions
@@ -1960,7 +1959,7 @@ Symbol: PMW0_FAULT_Handler
       At line 91 in file startup_TM4C123.s
       At line 342 in file startup_TM4C123.s
 
-PMW1_0_Handler 000000E6
+PMW1_0_Handler 000000E4
 
 Symbol: PMW1_0_Handler
    Definitions
@@ -1969,7 +1968,7 @@ Symbol: PMW1_0_Handler
       At line 216 in file startup_TM4C123.s
       At line 906 in file startup_TM4C123.s
 
-PWM0_0_Handler 0000002C
+PWM0_0_Handler 0000002A
 
 Symbol: PWM0_0_Handler
    Definitions
@@ -1978,7 +1977,7 @@ Symbol: PWM0_0_Handler
       At line 92 in file startup_TM4C123.s
       At line 348 in file startup_TM4C123.s
 
-PWM0_1_Handler 0000002E
+PWM0_1_Handler 0000002C
 
 Symbol: PWM0_1_Handler
    Definitions
@@ -1987,7 +1986,7 @@ Symbol: PWM0_1_Handler
       At line 93 in file startup_TM4C123.s
       At line 354 in file startup_TM4C123.s
 
-PWM0_2_Handler 00000030
+PWM0_2_Handler 0000002E
 
 Symbol: PWM0_2_Handler
    Definitions
@@ -1996,7 +1995,7 @@ Symbol: PWM0_2_Handler
       At line 94 in file startup_TM4C123.s
       At line 360 in file startup_TM4C123.s
 
-PWM0_3_Handler 00000070
+PWM0_3_Handler 0000006E
 
 Symbol: PWM0_3_Handler
    Definitions
@@ -2011,7 +2010,7 @@ Relocatable symbols
       At line 127 in file startup_TM4C123.s
       At line 552 in file startup_TM4C123.s
 
-PWM1_1_Handler 000000E8
+PWM1_1_Handler 000000E6
 
 Symbol: PWM1_1_Handler
    Definitions
@@ -2020,7 +2019,7 @@ Symbol: PWM1_1_Handler
       At line 217 in file startup_TM4C123.s
       At line 912 in file startup_TM4C123.s
 
-PWM1_2_Handler 000000EA
+PWM1_2_Handler 000000E8
 
 Symbol: PWM1_2_Handler
    Definitions
@@ -2029,7 +2028,7 @@ Symbol: PWM1_2_Handler
       At line 218 in file startup_TM4C123.s
       At line 918 in file startup_TM4C123.s
 
-PWM1_3_Handler 000000EC
+PWM1_3_Handler 000000EA
 
 Symbol: PWM1_3_Handler
    Definitions
@@ -2038,7 +2037,7 @@ Symbol: PWM1_3_Handler
       At line 219 in file startup_TM4C123.s
       At line 924 in file startup_TM4C123.s
 
-PWM1_FAULT_Handler 000000EE
+PWM1_FAULT_Handler 000000EC
 
 Symbol: PWM1_FAULT_Handler
    Definitions
@@ -2047,7 +2046,7 @@ Symbol: PWM1_FAULT_Handler
       At line 220 in file startup_TM4C123.s
       At line 930 in file startup_TM4C123.s
 
-PendSV_Handler 00000014
+PendSV_Handler 00000012
 
 Symbol: PendSV_Handler
    Definitions
@@ -2056,7 +2055,7 @@ Symbol: PendSV_Handler
       At line 77 in file startup_TM4C123.s
       At line 277 in file startup_TM4C123.s
 
-QEI0_Handler 00000032
+QEI0_Handler 00000030
 
 Symbol: QEI0_Handler
    Definitions
@@ -2065,7 +2064,7 @@ Symbol: QEI0_Handler
       At line 95 in file startup_TM4C123.s
       At line 366 in file startup_TM4C123.s
 
-QEI1_Handler 00000064
+QEI1_Handler 00000062
 
 
 
@@ -2080,7 +2079,7 @@ Symbol: QEI1_Handler
       At line 120 in file startup_TM4C123.s
       At line 516 in file startup_TM4C123.s
 
-QEI2_Handler 000000C0
+QEI2_Handler 000000BE
 
 Symbol: QEI2_Handler
    Definitions
@@ -2098,7 +2097,7 @@ Symbol: Reset_Handler
       At line 64 in file startup_TM4C123.s
       At line 232 in file startup_TM4C123.s
 
-SSI0_Handler 00000026
+SSI0_Handler 00000024
 
 Symbol: SSI0_Handler
    Definitions
@@ -2107,7 +2106,7 @@ Symbol: SSI0_Handler
       At line 89 in file startup_TM4C123.s
       At line 330 in file startup_TM4C123.s
 
-SSI1_Handler 0000005C
+SSI1_Handler 0000005A
 
 Symbol: SSI1_Handler
    Definitions
@@ -2116,7 +2115,7 @@ Symbol: SSI1_Handler
       At line 116 in file startup_TM4C123.s
       At line 492 in file startup_TM4C123.s
 
-SSI2_Handler 00000084
+SSI2_Handler 00000082
 
 Symbol: SSI2_Handler
    Definitions
@@ -2125,7 +2124,7 @@ Symbol: SSI2_Handler
       At line 139 in file startup_TM4C123.s
       At line 612 in file startup_TM4C123.s
 
-SSI3_Handler 00000086
+SSI3_Handler 00000084
 
 Symbol: SSI3_Handler
    Definitions
@@ -2140,7 +2139,7 @@ Relocatable symbols
 
       At line 618 in file startup_TM4C123.s
 
-SVC_Handler 00000010
+SVC_Handler 0000000E
 
 Symbol: SVC_Handler
    Definitions
@@ -2149,7 +2148,7 @@ Symbol: SVC_Handler
       At line 74 in file startup_TM4C123.s
       At line 267 in file startup_TM4C123.s
 
-SYSCTL_Handler 00000050
+SYSCTL_Handler 0000004E
 
 Symbol: SYSCTL_Handler
    Definitions
@@ -2158,7 +2157,7 @@ Symbol: SYSCTL_Handler
       At line 110 in file startup_TM4C123.s
       At line 456 in file startup_TM4C123.s
 
-SysTick_Handler 00000016
+SysTick_Handler 00000014
 
 Symbol: SysTick_Handler
    Definitions
@@ -2167,7 +2166,7 @@ Symbol: SysTick_Handler
       At line 78 in file startup_TM4C123.s
       At line 282 in file startup_TM4C123.s
 
-TIMER0A_Handler 0000003E
+TIMER0A_Handler 0000003C
 
 Symbol: TIMER0A_Handler
    Definitions
@@ -2176,7 +2175,7 @@ Symbol: TIMER0A_Handler
       At line 101 in file startup_TM4C123.s
       At line 402 in file startup_TM4C123.s
 
-TIMER0B_Handler 00000040
+TIMER0B_Handler 0000003E
 
 Symbol: TIMER0B_Handler
    Definitions
@@ -2185,7 +2184,7 @@ Symbol: TIMER0B_Handler
       At line 102 in file startup_TM4C123.s
       At line 408 in file startup_TM4C123.s
 
-TIMER1A_Handler 00000042
+TIMER1A_Handler 00000040
 
 Symbol: TIMER1A_Handler
    Definitions
@@ -2194,7 +2193,7 @@ Symbol: TIMER1A_Handler
       At line 103 in file startup_TM4C123.s
       At line 414 in file startup_TM4C123.s
 
-TIMER1B_Handler 00000044
+TIMER1B_Handler 00000042
 
 Symbol: TIMER1B_Handler
 
@@ -2209,7 +2208,7 @@ Relocatable symbols
       At line 104 in file startup_TM4C123.s
       At line 420 in file startup_TM4C123.s
 
-TIMER2A_Handler 00000046
+TIMER2A_Handler 00000044
 
 Symbol: TIMER2A_Handler
    Definitions
@@ -2218,7 +2217,7 @@ Symbol: TIMER2A_Handler
       At line 105 in file startup_TM4C123.s
       At line 426 in file startup_TM4C123.s
 
-TIMER2B_Handler 00000048
+TIMER2B_Handler 00000046
 
 Symbol: TIMER2B_Handler
    Definitions
@@ -2227,7 +2226,7 @@ Symbol: TIMER2B_Handler
       At line 106 in file startup_TM4C123.s
       At line 432 in file startup_TM4C123.s
 
-TIMER3A_Handler 0000005E
+TIMER3A_Handler 0000005C
 
 Symbol: TIMER3A_Handler
    Definitions
@@ -2236,7 +2235,7 @@ Symbol: TIMER3A_Handler
       At line 117 in file startup_TM4C123.s
       At line 498 in file startup_TM4C123.s
 
-TIMER3B_Handler 00000060
+TIMER3B_Handler 0000005E
 
 Symbol: TIMER3B_Handler
    Definitions
@@ -2245,7 +2244,7 @@ Symbol: TIMER3B_Handler
       At line 118 in file startup_TM4C123.s
       At line 504 in file startup_TM4C123.s
 
-TIMER4A_Handler 00000096
+TIMER4A_Handler 00000094
 
 Symbol: TIMER4A_Handler
    Definitions
@@ -2254,7 +2253,7 @@ Symbol: TIMER4A_Handler
       At line 152 in file startup_TM4C123.s
       At line 666 in file startup_TM4C123.s
 
-TIMER4B_Handler 00000098
+TIMER4B_Handler 00000096
 
 Symbol: TIMER4B_Handler
    Definitions
@@ -2269,7 +2268,7 @@ ARM Macro Assembler    Page 15 Alphabetic symbol ordering
 Relocatable symbols
 
 
-TIMER5A_Handler 0000009A
+TIMER5A_Handler 00000098
 
 Symbol: TIMER5A_Handler
    Definitions
@@ -2278,7 +2277,7 @@ Symbol: TIMER5A_Handler
       At line 174 in file startup_TM4C123.s
       At line 678 in file startup_TM4C123.s
 
-TIMER5B_Handler 0000009C
+TIMER5B_Handler 0000009A
 
 Symbol: TIMER5B_Handler
    Definitions
@@ -2287,7 +2286,7 @@ Symbol: TIMER5B_Handler
       At line 175 in file startup_TM4C123.s
       At line 684 in file startup_TM4C123.s
 
-UART0_Handler 00000022
+UART0_Handler 00000020
 
 Symbol: UART0_Handler
    Definitions
@@ -2296,7 +2295,7 @@ Symbol: UART0_Handler
       At line 87 in file startup_TM4C123.s
       At line 318 in file startup_TM4C123.s
 
-UART1_Handler 00000024
+UART1_Handler 00000022
 
 Symbol: UART1_Handler
    Definitions
@@ -2305,7 +2304,7 @@ Symbol: UART1_Handler
       At line 88 in file startup_TM4C123.s
       At line 324 in file startup_TM4C123.s
 
-UART2_Handler 0000005A
+UART2_Handler 00000058
 
 Symbol: UART2_Handler
    Definitions
@@ -2314,7 +2313,7 @@ Symbol: UART2_Handler
       At line 115 in file startup_TM4C123.s
       At line 486 in file startup_TM4C123.s
 
-UART3_Handler 00000088
+UART3_Handler 00000086
 
 Symbol: UART3_Handler
    Definitions
@@ -2323,7 +2322,7 @@ Symbol: UART3_Handler
       At line 141 in file startup_TM4C123.s
       At line 624 in file startup_TM4C123.s
 
-UART4_Handler 0000008A
+UART4_Handler 00000088
 
 Symbol: UART4_Handler
    Definitions
@@ -2338,7 +2337,7 @@ Relocatable symbols
       At line 142 in file startup_TM4C123.s
       At line 630 in file startup_TM4C123.s
 
-UART5_Handler 0000008C
+UART5_Handler 0000008A
 
 Symbol: UART5_Handler
    Definitions
@@ -2347,7 +2346,7 @@ Symbol: UART5_Handler
       At line 143 in file startup_TM4C123.s
       At line 636 in file startup_TM4C123.s
 
-UART6_Handler 0000008E
+UART6_Handler 0000008C
 
 Symbol: UART6_Handler
    Definitions
@@ -2356,7 +2355,7 @@ Symbol: UART6_Handler
       At line 144 in file startup_TM4C123.s
       At line 642 in file startup_TM4C123.s
 
-UART7_Handler 00000090
+UART7_Handler 0000008E
 
 Symbol: UART7_Handler
    Definitions
@@ -2365,7 +2364,7 @@ Symbol: UART7_Handler
       At line 145 in file startup_TM4C123.s
       At line 648 in file startup_TM4C123.s
 
-UDMAERR_Handler 00000074
+UDMAERR_Handler 00000072
 
 Symbol: UDMAERR_Handler
    Definitions
@@ -2374,7 +2373,7 @@ Symbol: UDMAERR_Handler
       At line 129 in file startup_TM4C123.s
       At line 564 in file startup_TM4C123.s
 
-UDMA_Handler 00000072
+UDMA_Handler 00000070
 
 Symbol: UDMA_Handler
    Definitions
@@ -2383,7 +2382,7 @@ Symbol: UDMA_Handler
       At line 128 in file startup_TM4C123.s
       At line 558 in file startup_TM4C123.s
 
-USB0_Handler 0000006E
+USB0_Handler 0000006C
 
 Symbol: USB0_Handler
    Definitions
@@ -2398,7 +2397,7 @@ Symbol: USB0_Handler
 ARM Macro Assembler    Page 17 Alphabetic symbol ordering
 Relocatable symbols
 
-UsageFault_Handler 0000000E
+UsageFault_Handler 0000000C
 
 Symbol: UsageFault_Handler
    Definitions
@@ -2407,7 +2406,7 @@ Symbol: UsageFault_Handler
       At line 69 in file startup_TM4C123.s
       At line 263 in file startup_TM4C123.s
 
-WDT0_Handler 0000003C
+WDT0_Handler 0000003A
 
 Symbol: WDT0_Handler
    Definitions
@@ -2416,7 +2415,7 @@ Symbol: WDT0_Handler
       At line 100 in file startup_TM4C123.s
       At line 396 in file startup_TM4C123.s
 
-WTIMER0A_Handler 0000009E
+WTIMER0A_Handler 0000009C
 
 Symbol: WTIMER0A_Handler
    Definitions
@@ -2425,7 +2424,7 @@ Symbol: WTIMER0A_Handler
       At line 176 in file startup_TM4C123.s
       At line 690 in file startup_TM4C123.s
 
-WTIMER0B_Handler 000000A0
+WTIMER0B_Handler 0000009E
 
 Symbol: WTIMER0B_Handler
    Definitions
@@ -2434,7 +2433,7 @@ Symbol: WTIMER0B_Handler
       At line 177 in file startup_TM4C123.s
       At line 696 in file startup_TM4C123.s
 
-WTIMER1A_Handler 000000A2
+WTIMER1A_Handler 000000A0
 
 Symbol: WTIMER1A_Handler
    Definitions
@@ -2443,7 +2442,7 @@ Symbol: WTIMER1A_Handler
       At line 178 in file startup_TM4C123.s
       At line 702 in file startup_TM4C123.s
 
-WTIMER1B_Handler 000000A4
+WTIMER1B_Handler 000000A2
 
 Symbol: WTIMER1B_Handler
    Definitions
@@ -2452,7 +2451,7 @@ Symbol: WTIMER1B_Handler
       At line 179 in file startup_TM4C123.s
       At line 708 in file startup_TM4C123.s
 
-WTIMER2A_Handler 000000A6
+WTIMER2A_Handler 000000A4
 
 Symbol: WTIMER2A_Handler
    Definitions
@@ -2467,7 +2466,7 @@ Relocatable symbols
       At line 180 in file startup_TM4C123.s
       At line 714 in file startup_TM4C123.s
 
-WTIMER2B_Handler 000000A8
+WTIMER2B_Handler 000000A6
 
 Symbol: WTIMER2B_Handler
    Definitions
@@ -2476,7 +2475,7 @@ Symbol: WTIMER2B_Handler
       At line 181 in file startup_TM4C123.s
       At line 720 in file startup_TM4C123.s
 
-WTIMER3A_Handler 000000AA
+WTIMER3A_Handler 000000A8
 
 Symbol: WTIMER3A_Handler
    Definitions
@@ -2485,7 +2484,7 @@ Symbol: WTIMER3A_Handler
       At line 182 in file startup_TM4C123.s
       At line 726 in file startup_TM4C123.s
 
-WTIMER3B_Handler 000000AC
+WTIMER3B_Handler 000000AA
 
 Symbol: WTIMER3B_Handler
    Definitions
@@ -2494,7 +2493,7 @@ Symbol: WTIMER3B_Handler
       At line 183 in file startup_TM4C123.s
       At line 732 in file startup_TM4C123.s
 
-WTIMER4A_Handler 000000AE
+WTIMER4A_Handler 000000AC
 
 Symbol: WTIMER4A_Handler
    Definitions
@@ -2503,7 +2502,7 @@ Symbol: WTIMER4A_Handler
       At line 184 in file startup_TM4C123.s
       At line 738 in file startup_TM4C123.s
 
-WTIMER4B_Handler 000000B0
+WTIMER4B_Handler 000000AE
 
 Symbol: WTIMER4B_Handler
    Definitions
@@ -2512,7 +2511,7 @@ Symbol: WTIMER4B_Handler
       At line 185 in file startup_TM4C123.s
       At line 744 in file startup_TM4C123.s
 
-WTIMER5A_Handler 000000B2
+WTIMER5A_Handler 000000B0
 
 Symbol: WTIMER5A_Handler
    Definitions
@@ -2521,7 +2520,7 @@ Symbol: WTIMER5A_Handler
       At line 186 in file startup_TM4C123.s
       At line 750 in file startup_TM4C123.s
 
-WTIMER5B_Handler 000000B4
+WTIMER5B_Handler 000000B2
 
 
 
@@ -2590,8 +2589,8 @@ Symbol: __main
    Definitions
       At line 233 in file startup_TM4C123.s
    Uses
-      At line 235 in file startup_TM4C123.s
-Comment: __main used once
+      None
+Comment: __main unused
 __use_two_region_memory 00000000
 
 Symbol: __use_two_region_memory
