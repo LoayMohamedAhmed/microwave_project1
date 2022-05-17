@@ -57,5 +57,16 @@ void Ports_Init ()
 	GPIO_PORTF_DIR_R=0x0E;
 	GPIO_PORTF_DEN_R=0x1F;
 	GPIO_PORTF_PUR_R=0x11;
-		
+	
+	
+	
+	//intialisation of Keypad column (PA4-PA7) (soluition to unlock tiva )
+	GPIO_PORTA_LOCK_R = 0x4C4F434B;
+	GPIO_PORTA_CR_R |= 0xF0;
+	GPIO_PORTA_DIR_R = 0xF0;
+	GPIO_PORTA_DEN_R = 0xF0;
+	GPIO_PORTA_AMSEL_R = 0x00;
+	GPIO_PORTA_AFSEL_R = 0x00;
+	GPIO_PORTA_PCTL_R = 0x00000000;
+  GPIO_PORTA_PUR_R = 0x00;
 }
