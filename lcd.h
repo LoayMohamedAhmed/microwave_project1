@@ -11,3 +11,5 @@
 	void delay_ms(int t);
 	
 	void LCD_Cmd(unsigned char command);
+	void lcd_write(u8 data);
+  void set_cursor(unsigned int x,unsigned int y) ;
