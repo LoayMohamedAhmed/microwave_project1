@@ -1,5 +1,5 @@
 
-void delay_micro(int n)
+void delay_micro(int n)  //Delay function in Micro Seconds
 	{
 
 		int i,j;
