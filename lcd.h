@@ -8,3 +8,4 @@
 	typedef float  f32;
 	typedef double f64;
 //prototypes definations 
+	void delay_ms(int t);
