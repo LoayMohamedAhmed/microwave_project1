@@ -230,10 +230,9 @@ __Vectors_Size  EQU     __Vectors_End - __Vectors
 
 Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]
-				IMPORT  __main
-				BLX R0
-                BX      R0
-				
+				IMPORT  	__main
+				LDR		R0, =__main
+                BX  	R0
                 ENDP
 
 
