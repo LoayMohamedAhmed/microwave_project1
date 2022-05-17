@@ -8,4 +8,5 @@
 	typedef double f64;
 	
 	void delay_ms(int t);
-	void delay_microSec(int n);
+	void delay_microSec(int n);7
+	//hello
