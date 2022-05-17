@@ -34,5 +34,22 @@
 //    delay_ms(2);
 //  }
 //}
+//void init_lcd (void)              
+//{
+//	lcd_cmd(0x38);
+//	delay_ms(1);
 
+//	
+//	lcd_cmd(0x06);
+//	delay_ms(1);
+//	
+//	lcd_cmd(0x0F);
+//	delay_ms(1);
+//	
+//	
+//	lcd_cmd(0x01);
+//	delay_ms(2);
+//	
+//	return;
+//}
 
