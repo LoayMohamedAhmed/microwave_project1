@@ -39,14 +39,14 @@ void Ports_Init ()
 	
 	
 	//intialisation of Keypad column (Pc4-Pc7)
-	GPIO_PORTC_LOCK_R = 0x4C4F434B;
-	GPIO_PORTC_CR_R |= 0xF0;
-	GPIO_PORTC_DIR_R = 0xF0;
-	GPIO_PORTC_DEN_R = 0xF0;
-	GPIO_PORTC_AMSEL_R = 0x00;
-	GPIO_PORTC_AFSEL_R = 0x00;
-	GPIO_PORTC_PCTL_R = 0x00000000;
-  GPIO_PORTC_PUR_R = 0x00;	
+//	GPIO_PORTC_LOCK_R = 0x4C4F434B;
+//	GPIO_PORTC_CR_R |= 0xF0;
+//	GPIO_PORTC_DIR_R = 0xF0;
+//	GPIO_PORTC_DEN_R = 0xF0;
+//	GPIO_PORTC_AMSEL_R = 0x00;
+//	GPIO_PORTC_AFSEL_R = 0x00;
+//	GPIO_PORTC_PCTL_R = 0x00000000;
+//  GPIO_PORTC_PUR_R = 0x00;	
 	
 	//intialisation of portF leds and switches    
 	GPIO_PORTF_LOCK_R= 0x4C4F434B;
@@ -60,7 +60,7 @@ void Ports_Init ()
 	
 	
 	
-	//intialisation of Keypad column (PA4-PA7) (soluition to unlock tiva )
+	//intialisation of Keypad column (PA4-PA7)
 	GPIO_PORTA_LOCK_R = 0x4C4F434B;
 	GPIO_PORTA_CR_R |= 0xF0;
 	GPIO_PORTA_DIR_R = 0xF0;
