@@ -35,7 +35,7 @@ void lcd_write(u8 data)
 //  }
 //}
 
-void LCD_Cmd(unsigned char command)
+void lcd_cmd(unsigned char command)
 {
 	GPIO_PORTA_DATA_R = 0x00; //RS=0, E=0, RW=0
 	GPIO_PORTA_DATA_R =command;
@@ -53,22 +53,22 @@ void LCD_Cmd(unsigned char command)
 }
 
 
-//void init_lcd (void)              
-//{
-//	lcd_cmd(0x38);
-//	delay_ms(1);
+void init_lcd (void)              
+{
+	lcd_cmd(0x38);
+	delay_ms(1);
 
-//	
-//	lcd_cmd(0x06);
-//	delay_ms(1);
-//	
-//	lcd_cmd(0x0F);
-//	delay_ms(1);
-//	
-//	
-//	lcd_cmd(0x01);
-//	delay_ms(2);
-//	
-//	return;
-//}
+	
+	lcd_cmd(0x06);
+	delay_ms(1);
+	
+	lcd_cmd(0x0F);
+	delay_ms(1);
+	
+	
+	lcd_cmd(0x01);
+	delay_ms(2);
+	
+	return;
+}
 
