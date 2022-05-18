@@ -1,7 +1,7 @@
 #include "headr.h"
 #include "stdint.h"
 
-//intializing port B
+//initialization of tiva ports
 void Ports_Init ()
  { 
 	//intialization of LCD data pins (PB0-PB7)
@@ -38,17 +38,17 @@ void Ports_Init ()
   GPIO_PORTD_PUR_R =0X80;		
 	
 	
-	//intialisation of Keypad column (Pc4-Pc7)
-	GPIO_PORTC_LOCK_R = 0x4C4F434B;
-	GPIO_PORTC_CR_R |= 0xF0;
-	GPIO_PORTC_DIR_R = 0xF0;
-	GPIO_PORTC_DEN_R = 0xF0;
-	GPIO_PORTC_AMSEL_R = 0x00;
-	GPIO_PORTC_AFSEL_R = 0x00;
-	GPIO_PORTC_PCTL_R = 0x00000000;
-  GPIO_PORTC_PUR_R = 0x00;	
+	//initialization of Keypad column (Pc4-Pc7)
+//	GPIO_PORTC_LOCK_R = 0x4C4F434B;
+//	GPIO_PORTC_CR_R |= 0xF0;
+//	GPIO_PORTC_DIR_R = 0xF0;
+//	GPIO_PORTC_DEN_R = 0xF0;
+//	GPIO_PORTC_AMSEL_R = 0x00;
+//	GPIO_PORTC_AFSEL_R = 0x00;
+//	GPIO_PORTC_PCTL_R = 0x00000000;
+//  GPIO_PORTC_PUR_R = 0x00;	
 	
-	//intialisation of portF leds and switches    
+	//initialization of portF leds and switches    
 	GPIO_PORTF_LOCK_R= 0x4C4F434B;
 	GPIO_PORTF_CR_R=0x1F;
 	GPIO_PORTF_AFSEL_R=0;
@@ -57,5 +57,16 @@ void Ports_Init ()
 	GPIO_PORTF_DIR_R=0x0E;
 	GPIO_PORTF_DEN_R=0x1F;
 	GPIO_PORTF_PUR_R=0x11;
-		
+	
+	
+	
+	//initialization of Keypad column (PA4-PA7)
+	GPIO_PORTA_LOCK_R = 0x4C4F434B;
+	GPIO_PORTA_CR_R |= 0xF0;
+	GPIO_PORTA_DIR_R = 0xF0;
+	GPIO_PORTA_DEN_R = 0xF0;
+	GPIO_PORTA_AMSEL_R = 0x00;
+	GPIO_PORTA_AFSEL_R = 0x00;
+	GPIO_PORTA_PCTL_R = 0x00000000;
+  GPIO_PORTA_PUR_R = 0x00;
 }
