@@ -3,36 +3,22 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-E:\Junior\Spring 2022\Embedded Systems\microwave_project1\project.uvproj
-Project File Date:  05/17/2022
+D:\Semester 6\CSE 211\Project\microwave_project1\project.uvproj
+Project File Date:  05/18/2022
 
 <h2>Output:</h2>
 Rebuild target 'Target 1'
 assembling startup_TM4C123.s...
 compiling keypad.c...
-keypad.c(1): warning:  #1-D: last line of file ends without a newline
-  //hello everybody
-keypad.c: 1 warning, 0 errors
 compiling delay.c...
-compiling main.c...
-lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
-    void Ports_Init ();
-lcd.h(18): warning:  #1-D: last line of file ends without a newline
-        void delay_micro();
-lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
-        void delay_micro();
-main.c(5): warning:  #1-D: last line of file ends without a newline
-  }
-main.c: 4 warnings, 0 errors
-compiling ports_init.c...
-compiling lcd.c...
-lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
-    void Ports_Init ();
-lcd.h(18): warning:  #1-D: last line of file ends without a newline
-        void delay_micro();
-lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
-        void delay_micro();
-lcd.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=528 RO-data=636 RW-data=0 ZI-data=608  
-".\project.axf" - 0 Error(s), 8 Warning(s).
+.\project.axf: Error: L6200E: Symbol delay_micro multiply defined (by delay.o and keypad.o).
+.\project.axf: Error: L6200E: Symbol delay_ms multiply defined (by delay.o and keypad.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 2 error messages.
+".\project.axf" - 2 Error(s), 0 Warning(s).
+Target not created
+</pre>
+</body>
+</html>
