@@ -55,19 +55,28 @@ void lcd_cmd(unsigned char command)
 
 void init_lcd (void)              
 {
+	//to Set function
 	lcd_cmd(0x38);
 	delay_ms(1);
 
-	
+	//to Set Entry Mode 
 	lcd_cmd(0x06);
 	delay_ms(1);
 	
+	//to Display ON OFF Control
 	lcd_cmd(0x0F);
 	delay_ms(1);
 	
 	
+	//to Clear Display
 	lcd_cmd(0x01);
 	delay_ms(2);
+	
+	
+	//to Return Home
+	lcd_cmd(0x02);
+	delay_ms(2);
+	
 	
 	return;
 }
