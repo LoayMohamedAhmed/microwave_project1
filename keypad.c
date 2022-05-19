@@ -1,6 +1,7 @@
 
-#include "ports_init.c"
-#include "delay.c"
+#include "lcd.h"
+#include "headr.h"
+#include "stdint.h"
 
 extern int k;
 unsigned const char symbol[4][4] = {{ '1', '2',  '3', 'A'},      

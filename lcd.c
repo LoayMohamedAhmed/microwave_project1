@@ -44,11 +44,11 @@ void lcd_cmd(unsigned char command)
 	GPIO_PORTA_DATA_R =0x00;
 	if(command <4) 
 	{
-		//delay_ms(2);
+		delay_ms(2);
 	}	
 	else
 	{	
-		//delay_micro(37); 
+		delay_micro(37); 
 	}
 }
 
