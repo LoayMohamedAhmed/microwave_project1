@@ -1,7 +1,9 @@
 #include "lcd.h"
 #include "headr.h"
 #include "stdint.h"
+#include "stdio.h"
 
+//For printing a character on the LCD
 void lcd_write(u8 data)
 {
 	GPIO_PORTB_DATA_R=data;
@@ -13,6 +15,8 @@ void lcd_write(u8 data)
 	return;
 }
 
+
+//For printing a string on the LCD
 void lcd_print(u8 *str)  
  {
 	int		i=0;
@@ -61,7 +65,7 @@ void lcd_cmd(u8 cmd)
 	return;
 }
 
-
+//Initialization of the LCD
 void init_lcd (void)              
 {
 	//to Set function
@@ -88,5 +92,18 @@ void init_lcd (void)
 	
 	
 	return;
+}
+
+//For printing integer numbers on the LCD
+void LCD_printInt(int no)
+{
+	int i = 0;
+  char toprint[4] = {0};
+  sprintf(toprint, "%d", no);
+  while(toprint[i] != '\0')
+  {
+    lcd_write(toprint[i]);
+    i++;
+  }
 }
 

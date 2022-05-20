@@ -16,3 +16,4 @@
   void set_cursor(unsigned int x,unsigned int y) ;
   void Ports_Init ();
 	void delay_micro();
+	void LCD_printInt(int no);
