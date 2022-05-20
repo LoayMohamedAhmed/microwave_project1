@@ -13,6 +13,20 @@ void lcd_write(u8 data)
 	return;
 }
 
+void lcd_print(u8 *str)  
+ {
+	int		i=0;
+	while(str[i]!='\0')
+	{
+		lcd_write(str[i]);
+		i++;
+		
+	}
+	
+	delay_ms(100);
+	
+	return;
+}
 
 
 //void set_cursor(unsigned int x,unsigned int y) // where x is the row and y is the colum of the LCD Xrang(0-1) Yrang(1-16)
