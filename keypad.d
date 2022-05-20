@@ -1,5 +1,4 @@
 .\keypad.o: keypad.c
-.\keypad.o: ports_init.c
+.\keypad.o: lcd.h
 .\keypad.o: headr.h
-.\keypad.o: D:\kiel\ARM\ARMCC\bin\..\include\stdint.h
-.\keypad.o: delay.c
+.\keypad.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h

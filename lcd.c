@@ -35,21 +35,16 @@ void lcd_write(u8 data)
 //  }
 //}
 
-void lcd_cmd(unsigned char command)
+void lcd_cmd(u8 cmd)
 {
-	GPIO_PORTA_DATA_R = 0x00; //RS=0, E=0, RW=0
-	GPIO_PORTA_DATA_R =command;
-	GPIO_PORTA_DATA_R =0x80; //E=1 to secure command
-	delay_micro(0);
-	GPIO_PORTA_DATA_R =0x00;
-	if(command <4) 
-	{
-		delay_ms(2);
-	}	
-	else
-	{	
-		delay_micro(37); 
-	}
+	GPIO_PORTB_DATA_R=cmd;
+	
+	GPIO_PORTE_DATA_R=0X08;
+	delay_ms(1);
+	GPIO_PORTE_DATA_R=0;
+	delay_ms(50);
+	
+	return;
 }
 
 
