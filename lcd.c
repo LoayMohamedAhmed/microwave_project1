@@ -32,27 +32,6 @@ void lcd_print(u8 *str)
 	return;
 }
 
-
-//void set_cursor(unsigned int x,unsigned int y) // where x is the row and y is the colum of the LCD Xrang(0-1) Yrang(1-16)
-//{
-//	int i;
-//  if (x==0)
-//	{ lcd_cmd(0X80); //access the first line of the LCD
-//    delay_ms(2);
-//	}
-//  else
-//	{
-//	  lcd_cmd(0XC1); // access the Second line of the LCD
-//    delay_ms(2);
-//	}
-
-//  for(i=0;i<y;i++)
-//  {
-//    lcd_cmd(0X14);
-//    delay_ms(2);
-//  }
-//}
-
 void lcd_cmd(u8 cmd)
 {
 	GPIO_PORTB_DATA_R=cmd;
@@ -64,6 +43,28 @@ void lcd_cmd(u8 cmd)
 	
 	return;
 }
+
+void set_cursor(unsigned int x,unsigned int y) // where x is the row and y is the colum of the LCD Xrang(0-1) Yrang(1-16)
+{
+	int i;
+  if (x==0)
+	{ lcd_cmd(0X80); //access the first line of the LCD
+    delay_ms(2);
+	}
+  else
+	{
+	  lcd_cmd(0XC1); // access the Second line of the LCD
+    delay_ms(2);
+	}
+
+  for(i=0;i<y;i++)
+  {
+    lcd_cmd(0X14);
+    delay_ms(2);
+  }
+}
+
+
 
 //Initialization of the LCD
 void init_lcd (void)              

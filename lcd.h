@@ -17,3 +17,4 @@
   void Ports_Init ();
 	void delay_micro();
 	void LCD_printInt(int no);
+	void lcd_print(u8 *str);

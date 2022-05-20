@@ -2,3 +2,4 @@
 .\lcd.o: lcd.h
 .\lcd.o: headr.h
 .\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
