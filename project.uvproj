@@ -425,16 +425,6 @@
               <FileType>1</FileType>
               <FilePath>.\lcd.c</FilePath>
             </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>counter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\counter.c</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

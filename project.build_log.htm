@@ -7,6 +7,32 @@ C:\Users\Lenovo\Documents\GitHub\microwave_project1\project.uvproj
 Project File Date:  05/20/2022
 
 <h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling keypad.c...
+lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
+    void Ports_Init ();
+lcd.h(18): warning:  #1-D: last line of file ends without a newline
+        void delay_micro();
+lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
+        void delay_micro();
+keypad.c: 3 warnings, 0 errors
+compiling delay.c...
+compiling lcd.c...
+lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
+    void Ports_Init ();
+lcd.h(18): warning:  #1-D: last line of file ends without a newline
+        void delay_micro();
+lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
+        void delay_micro();
+lcd.c: 3 warnings, 0 errors
+linking...
+.\project.axf: Error: L6218E: Undefined symbol k (referred from keypad.o).
+.\project.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 2 error messages.
+".\project.axf" - 2 Error(s), 6 Warning(s).
+Target not created
 </pre>
 </body>
 </html>
