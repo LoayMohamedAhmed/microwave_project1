@@ -50,18 +50,18 @@ void Reset_Timer()
 // }
 
 //}
-//void showEnteredTime()
-//{
+void showEnteredTime()
+{
 
-// set_cursor(1,5);
-// lcd_write(count_array1[0]);
-// lcd_write(count_array1[1]);
-// lcd_write(':');
-// lcd_write(count_array1[2]);
-// lcd_write(count_array1[3]);
-//	delay_ms(500);
+ set_cursor(1,5);
+ lcd_write(count_array1[0]);
+ lcd_write(count_array1[1]);
+ lcd_write(':');
+ lcd_write(count_array1[2]);
+ lcd_write(count_array1[3]);
+	delay_ms(500);
 
-//}
+}
 
 void interupt_init(){
 	GPIO_PORTF_IS_R &= ~0x11;     //  PF4-PF1 are edge-sensitive
