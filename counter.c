@@ -49,3 +49,15 @@ extern char count_array[4];
 // }
 
 //}
+//void showEnteredTime()
+//{
+
+// set_cursor(1,5);
+// lcd_write(count_array1[0]);
+// lcd_write(count_array1[1]);
+// lcd_write(':');
+// lcd_write(count_array1[2]);
+// lcd_write(count_array1[3]);
+//	delay_ms(500);
+
+//}
