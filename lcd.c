@@ -44,16 +44,16 @@ void lcd_cmd(u8 cmd)
 	return;
 }
 
-void set_cursor(unsigned int x,unsigned int y) // where x is the row and y is the colum of the LCD Xrang(0-1) Yrang(1-16)
+void set_cursor(unsigned int x,unsigned int y)	// where x is the row and y is the colum of the LCD Xrange(0-1) Yrange(0-15)
 {
 	int i;
   if (x==0)
-	{ lcd_cmd(0X80); //access the first line of the LCD
+	{ lcd_cmd(0X80);															//access the first line of the LCD
     delay_ms(2);
 	}
   else
 	{
-	  lcd_cmd(0XC1); // access the Second line of the LCD
+	  lcd_cmd(0XC1);															// access the Second line of the LCD
     delay_ms(2);
 	}
 
