@@ -61,3 +61,19 @@ extern char count_array[4];
 //	delay_ms(500);
 
 //}
+
+void interupt_init(){
+	GPIO_PORTF_IS_R &= ~0x11;     //  PF4-PF1 are edge-sensitive
+
+  GPIO_PORTF_IBE_R &= ~0x11;    //  PF4-PF1 are is not both edges
+
+  GPIO_PORTF_IEV_R &= ~0x11;    //     PF4-PF1 are falling edge event
+
+  GPIO_PORTF_ICR_R = 0x11;      //  clear flags
+
+  GPIO_PORTF_IM_R |= 0x11;      //  arm interrupt on PF4-PF1 
+
+  NVIC_PRI7_R = (NVIC_PRI7_R&0xFF00FFFF)|0x00A00000; // priority 5
+
+  NVIC_EN0_R = 0x40000000;      // enable interrupt 30 in NVIC
+}
