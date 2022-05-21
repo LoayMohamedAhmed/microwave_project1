@@ -1,5 +1,5 @@
 //datatypes definitions
-  typedef unsigned char u8;
+ 	typedef unsigned char u8;
 	typedef unsigned short int u16;
 	typedef unsigned long  int u32;
 	typedef signed char s8;
@@ -14,7 +14,7 @@
 	void LCD_Cmd(unsigned char command);
 	void lcd_write(u8 data);
   	void set_cursor(unsigned int x,unsigned int y) ;
- 	 void Ports_Init ();
+ 	void Ports_Init ();
 	void delay_micro();
 	void LCD_printInt(int no);
 	void lcd_print(u8 *str);
