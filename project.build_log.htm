@@ -3,36 +3,43 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Lenovo\Documents\GitHub\microwave_project1\project.uvproj
-Project File Date:  05/20/2022
+E:\Junior\Spring 2022\Embedded Systems\microwave_project1\project.uvproj
+Project File Date:  05/22/2022
 
 <h2>Output:</h2>
 Rebuild target 'Target 1'
 assembling startup_TM4C123.s...
 compiling keypad.c...
 lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
-    void Ports_Init ();
-lcd.h(18): warning:  #1-D: last line of file ends without a newline
-        void delay_micro();
+        void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
-keypad.c: 3 warnings, 0 errors
+keypad.c: 2 warnings, 0 errors
 compiling delay.c...
 compiling lcd.c...
 lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
-    void Ports_Init ();
-lcd.h(18): warning:  #1-D: last line of file ends without a newline
-        void delay_micro();
+        void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
-lcd.c: 3 warnings, 0 errors
+lcd.c: 2 warnings, 0 errors
+compiling state.c...
+lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
+        void Ports_Init ();
+lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
+        void delay_micro();
+state.h(2): warning:  #1295-D: Deprecated declaration Enter_Kilos - give arg types
+  void Enter_Kilos();
+state.c(9): warning:  #223-D: function "lcd_cmd" declared implicitly
+        lcd_cmd(0X01);
+state.c(25): warning:  #223-D: function "keypad_getkey" declared implicitly
+        kilos=keypad_getkey();
+state.c: 5 warnings, 0 errors
+compiling main.c...
+lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
+        void Ports_Init ();
+lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
+        void delay_micro();
+main.c: 2 warnings, 0 errors
 linking...
-.\project.axf: Error: L6218E: Undefined symbol k (referred from keypad.o).
-.\project.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 2 error messages.
-".\project.axf" - 2 Error(s), 6 Warning(s).
-Target not created
-</pre>
-</body>
-</html>
+Program Size: Code=1412 RO-data=636 RW-data=0 ZI-data=608  
+".\project.axf" - 0 Error(s), 11 Warning(s).

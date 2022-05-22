@@ -1,6 +1,7 @@
 #include "lcd.h"
 #include "state.h"
 extern char input[1];
+extern char kilos;
 
 void Enter_Kilos()
 {
@@ -25,4 +26,19 @@ void Enter_Kilos()
 	delay_ms(700);
 	lcd_write(kilos);
 	delay_ms(1000);
+	
+	if( kilos=='0') 
+
+	{
+			lcd_cmd(0X01);
+			set_cursor(0,1);
+			lcd_print("invalid input ");
+			delay_ms(2000);
+			set_cursor(0,0);
+			lcd_print("please try again");
+			delay_ms(1000);
+			goto again;
+	}
+	return;
+
 }
