@@ -5,11 +5,13 @@
 
  
 int k;
-char count_array1[4];
+char count_array1[4]={'0','0','0','0'};
 char count_array[]={'0','0','0','0'};
 char input[1];
 char kilos;
 int m,k,j,i,X,Y,Z,W;
+int interpart;
+int num;
 
 int main()
 {
@@ -22,8 +24,8 @@ int main()
 	Ports_Init ();
 	interupt_init();
 	init_lcd ();
-	GPIOF->DATA=0x00;
-	GPIOD->DATA=0x00;
+	GPIO_PORTF_DATA_R=0x00;
+	GPIO_PORTD_DATA_R=0x00;
 	
 	again:
 	lcd_cmd(0x01);
