@@ -6,9 +6,10 @@
 extern char input[1];
 extern char kilos;
 extern 	int m,k,j,i,X,Y,Z,W;
+extern 	int g , sec;
 extern char count_array[4];
 extern int num, interpart;
-extern char count_array1;
+extern char count_array1,decpart;
 
 void Enter_Kilos()
 {
@@ -51,7 +52,7 @@ void Enter_Kilos()
 }
 void GPIOF_Handler()
 {  
-	int m,k,j,i; 
+	int m,k,j,i,g; 
   if (GPIO_PORTF_MIS_R & 0x01) /* check if interrupt causes by PF4/SW1*/
     { 
 			if((count_array[0]>='3'&&(count_array[1]>'0'||count_array[2]>'0'||count_array[3]>'0'))||
