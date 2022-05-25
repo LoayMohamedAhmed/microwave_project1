@@ -45,9 +45,11 @@ void Enter_Kilos()
 
 }
 void GPIOF_Handler(){
+	
+	 int m,k,j,i;
 	 if (GPIOF->MIS & 0x01) /* check if interrupt causes by PF0/SW2*/
 	 {
-		 int m,k,j,i;
+		
 		 
 	 }
 	  else if (GPIOF->MIS & 0x10)// check if interrupt causes by PF4/SW1 
