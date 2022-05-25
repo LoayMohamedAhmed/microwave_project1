@@ -68,5 +68,20 @@ void GPIOF_Handler(){
 		{
 		
 		}
+		
+for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minutes
+  
+  for( k= count_array[1]-'0'; k>=0; k--){//Counting down the second digit in minutes
+      
+       for(j=count_array[2]-'0'; j>=0;j--){//Counting down the first digit in seconds
+       
+					for( i = count_array[3]-'0'; i>=0; i--){//Counting down the second digit in seconds
+             set_cursor(1,6);
+						 LCD_printInt(m);
+             LCD_printInt(k);
+             lcd_write(':');
+             LCD_printInt(j);
+             LCD_printInt(i);
+				     delay_ms(900);
 	
 }
