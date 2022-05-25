@@ -48,9 +48,40 @@ void Enter_Kilos()
 
 }
 void GPIOF_Handler()
-{
-	
-	for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minutes
+{  
+	int m,k,j,i; 
+  if (GPIOF->MIS & 0x01) /* check if interrupt causes by PF4/SW1*/
+    { 
+			if((count_array[0]>='3'&&(count_array[1]>'0'||count_array[2]>'0'||count_array[3]>'0'))||
+				(count_array[2]>='6')||(count_array[0]=='0'&&count_array[1]=='0'&&count_array[2]=='0'&&count_array[3]=='0'))
+			{
+				lcd_cmd(0x01);
+				set_cursor(0,1);
+				lcd_print("Invalid input!");
+				delay_ms(1000);
+				for(g=0;g<4;g++)
+				{
+					count_array1[g]='0';
+				}
+				goto end;
+			}
+
+      lcd_cmd(0X01);
+      set_cursor(0,1);
+      lcd_print("start Cooking..");
+      
+GPIO_PORTF_ICR_R|= 0x01;
+//      loay:
+//      if(count_array[2]>=6||count_array[0]>=6)
+//    {
+//      lcd_cmd(0x01);
+//      set_cursor(0,4);
+//      lcd_print("invalid index in seconds");
+//      enter_counter();
+//      goto loay;
+//    }
+GPIOF->DATA|=0x0C;
+for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minutes
   
   for( k= count_array[1]-'0'; k>=0; k--){//Counting down the second digit in minutes
       
@@ -58,12 +89,12 @@ void GPIOF_Handler()
        
          for( i = count_array[3]-'0'; i>=0; i--){//Counting down the second digit in seconds
              set_cursor(1,6);
-						 LCD_printInt(m); 				//printing the first digit in minutes
-             LCD_printInt(k);					//printing the second digits in minutes
-             lcd_write(':');
-             LCD_printInt(j);					//printing the first digit in seconds
-             LCD_printInt(i);					//printing the second digit in seconds
-             delay_ms(900);
+        LCD_printInt(m);
+        LCD_printInt(k);
+        lcd_write(':');
+        LCD_printInt(j);
+        LCD_printInt(i);
+      delay_ms(900);
           
     while(GPIOD->DATA==0x00)
 {
@@ -131,39 +162,6 @@ lcd_cmd(0X01);
   end:
     GPIO_PORTF_ICR_R|= 0x01;
 //	   Reset_Timer();
-    }
-
-	else if (GPIOF->MIS & 0x10)// check if interrupt causes by PF4/SW1 
-		{
-		  lcd_cmd(0x01);
-      Reset_Timer();
-      count_array1[0]='0';
-      count_array1[1]='0';
-      count_array1[2]='0';
-      count_array1[3]='0';
-      GPIOF->ICR |= 0x10;
-		}
- }
-
-void cooking() 
-{
-	if(input[0]=='A')  					//Popcorn
-	{
-	
-		count_array[0]='0';
-		count_array[1]='1';
-		count_array[2]='0';
-		count_array[3]='0';				//1 minute
-		lcd_cmd(0X01);
-	  set_cursor(0,2); 
-    lcd_print("push switch 2 to start...");
-	while(1)
-	{
-		if(Z==1)
-		{
-			main();
-		}
-	}
     }
 	
 	else if(input[0]=='B') 					//Beef
