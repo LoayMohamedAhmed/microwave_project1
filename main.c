@@ -68,4 +68,11 @@ int main()
 		  Enter_Kilos();
 			cooking();
 		}	
+		else 
+		{
+			lcd_cmd(0X01);
+			set_cursor(0,2);
+			lcd_print("inavlid input");
+			goto again;
+   	}
 }
