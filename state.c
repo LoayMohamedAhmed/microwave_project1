@@ -133,7 +133,13 @@ lcd_cmd(0X01);
 
 	else if (GPIOF->MIS & 0x10)// check if interrupt causes by PF4/SW1 
 		{
-		
+		  lcd_cmd(0x01);
+      Reset_Timer();
+      count_array1[0]='0';
+      count_array1[1]='0';
+      count_array1[2]='0';
+      count_array1[3]='0';
+      GPIOF->ICR |= 0x10;
 		}
     }
       
