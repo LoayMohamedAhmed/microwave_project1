@@ -7,7 +7,7 @@ extern char input[1];
 extern char kilos;
 extern 	int m,k,j,i,X,Y,Z,W;
 extern char count_array[4];
-extern num, interpart;
+extern int num, interpart;
 extern char count_array1;
 
 void Enter_Kilos()
