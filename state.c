@@ -117,3 +117,19 @@ GPIO_PORTD_DATA_R=0X40;
 	lcd_cmd(0x02);
 	lcd_print("cooking Done");
 }
+							
+							
+while(i)
+{ 
+    GPIOF->DATA =0X02;
+    GPIO_PORTD_DATA_R=0X40;
+    delay_ms(200);
+    GPIOF->DATA =0X04;
+    delay_ms(200);
+    GPIOF->DATA =0X08;
+    GPIO_PORTD_DATA_R=0X00;
+    delay_ms(200);
+    GPIOF->DATA =0X00;
+    set_cursor(0,5);
+    i--;
+  }
