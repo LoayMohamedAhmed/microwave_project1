@@ -2,14 +2,14 @@
 #include "lcd.h"
 #include "headr.h"
 #include "stdint.h"
+#include "keypad.h"
 
 extern int k;
+
 unsigned const char symbol[4][4] = {{ '1', '2',  '3', 'A'},      
                                     { '4', '5',  '6', 'B'},      
                                     { '7', '8',  '9', 'C'},      
-                                    { '.', '0',  '#', 'D'}};  //define keypad symbols
-
-
+                                    { '.', '0',  '#', 'D'}};  
 																		
 char keypad_getkey(void)
 {

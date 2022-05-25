@@ -1,5 +1,6 @@
 #include "lcd.h"
 #include "state.h"
+#include "keypad.h"
 extern char input[1];
 extern char kilos;
 
