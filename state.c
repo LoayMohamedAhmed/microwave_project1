@@ -106,5 +106,14 @@ for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minut
           Z=1;
           goto end;
         }
-				
+	GPIOF->DATA=0x00;
+				i=3;
+				X=1;
+				Y=1;
+				W=1;
+				Z=1;
+GPIO_PORTD_DATA_R=0X40;
+	lcd_cmd(0X01);
+	lcd_cmd(0x02);
+	lcd_print("cooking Done");......to here
 }
