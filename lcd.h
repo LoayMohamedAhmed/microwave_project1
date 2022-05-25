@@ -21,3 +21,4 @@
 	void intialisation_timer();
 	void interupt_init();
 	void init_lcd();
+int main();

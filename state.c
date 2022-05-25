@@ -3,13 +3,16 @@
 #include "stdint.h"
 #include "state.h"
 #include "keypad.h"
+#include "counter.h"
+
 extern char input[1];
 extern char kilos;
 extern 	int m,k,j,i,X,Y,Z,W;
 extern 	int g , sec;
 extern char count_array[4];
+extern char count_array1[4];
 extern int num, interpart;
-extern char count_array1,decpart;
+extern char decpart;
 
 void Enter_Kilos()
 {
@@ -166,7 +169,38 @@ lcd_cmd(0X01);
     GPIO_PORTF_ICR_R|= 0x01;
 //	   Reset_Timer();
     }
+		     else if (GPIO_PORTF_MIS_R & 0x10)/* check if interrupt causes by PF0/SW2 */
+    {
+			
+			lcd_cmd(0x01);
+      Reset_Timer();
+      count_array1[0]='0';
+      count_array1[1]='0';
+      count_array1[2]='0';
+      count_array1[3]='0';
+     GPIO_PORTF_ICR_R  |= 0x10; /* clear the interrupt flag */
+    }
+}
+	void cooking()
+{
+	if(input[0]=='A')
+	{
 	
+		count_array[0]='0';
+		count_array[1]='1';
+		count_array[2]='0';
+		count_array[3]='0';
+		lcd_cmd(0X01);
+	  set_cursor(0,2); 
+    lcd_print("push switch 2 to start...");
+		while(1)
+		{
+		if(Z==1)
+		{
+			main();
+		}
+		}
+	}
 	else if(input[0]=='B') 					//Beef
 	{
 		 num = 0.5*(kilos-'0'); 			/*for calculating the time needed in minutes for every weight*/
