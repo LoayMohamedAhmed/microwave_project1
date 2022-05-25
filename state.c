@@ -58,12 +58,12 @@ void GPIOF_Handler()
        
          for( i = count_array[3]-'0'; i>=0; i--){//Counting down the second digit in seconds
              set_cursor(1,6);
-        LCD_printInt(m);
-        LCD_printInt(k);
-        lcd_write(':');
-        LCD_printInt(j);
-        LCD_printInt(i);
-      delay_ms(900);
+						 LCD_printInt(m); 				//printing the first digit in minutes
+             LCD_printInt(k);					//printing the second digits in minutes
+             lcd_write(':');
+             LCD_printInt(j);					//printing the first digit in seconds
+             LCD_printInt(i);					//printing the second digit in seconds
+             delay_ms(900);
           
     while(GPIOD->DATA==0x00)
 {
@@ -166,7 +166,7 @@ void cooking()
 	}
     }
 	
-	else if(input[0]=='B') 					//Beaf
+	else if(input[0]=='B') 					//Beef
 	{
 		 num = 0.5*(kilos-'0'); 			/*for calculating the time needed in minutes for every weight*/
      interpart = (int)num; 				/*for getting the integer part of the time*/
@@ -189,7 +189,7 @@ void cooking()
 		}
 		
 	}
-	else if(input[0]=='C')
+	else if(input[0]=='C')	//Chicken
 	{
 		   if (kilos <'5'){
 			  count_array[0] = '0';
