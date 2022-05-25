@@ -47,4 +47,14 @@ int main()
   delay_ms(1000);
 	set_cursor(1,4);
 	input[0] = keypad_getkey();
+	
+	if(input[0]=='A'){ 
+		lcd_cmd(0x01);
+		set_cursor(0,4);
+		lcd_print("Popcorn");
+		delay_ms(500);
+		cooking();
+		}
+	
+		
 }
