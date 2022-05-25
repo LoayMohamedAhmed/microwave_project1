@@ -115,5 +115,5 @@ for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minut
 GPIO_PORTD_DATA_R=0X40;
 	lcd_cmd(0X01);
 	lcd_cmd(0x02);
-	lcd_print("cooking Done");......to here
+	lcd_print("cooking Done");
 }
