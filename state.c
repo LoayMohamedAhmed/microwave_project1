@@ -164,5 +164,22 @@ void cooking()
 		}
 	}
     }
-	**
+	
+	else if(input[0]=='B') 					//Beaf
+	{
+		 num = 0.5*(kilos-'0'); 			/*for calculating the time needed in minutes for every weight*/
+     interpart = (int)num; 				/*for getting the integer part of the time*/
+     decpart = num - interpart; 	/*for separating of the decimal part from the integer part*/ 
+     sec = (int)(decpart*60); 		/*converting the decimal part into seconds*/
+  	
+     count_array[0] = '0';
+     count_array[1] = interpart + '0';
+     count_array[2] = '0' + (sec/10);
+     count_array[3] = '0';
+		 lcd_cmd(0X01);
+	   set_cursor(0,2); 
+     lcd_print("push switch 2 to start...");
+		
+		
+	}
 }	
