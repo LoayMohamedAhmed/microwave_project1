@@ -133,3 +133,9 @@ while(i)
     set_cursor(0,5);
     i--;
   }
+ /* clear the interrupt flag */
+		end:
+    GPIO_PORTF_ICR_R|= 0x01;
+//	Reset_Timer();
+    }
+      
