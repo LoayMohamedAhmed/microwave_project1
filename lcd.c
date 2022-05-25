@@ -2,7 +2,7 @@
 #include "headr.h"
 #include "stdint.h"
 #include "stdio.h"
-
+#include "keypad.h";
 //For printing a character on the LCD
 void lcd_write(u8 data)
 {
