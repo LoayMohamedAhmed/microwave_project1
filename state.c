@@ -179,7 +179,13 @@ void cooking()
 		 lcd_cmd(0X01);
 	   set_cursor(0,2); 
      lcd_print("push switch 2 to start...");
-		
+	while(1)
+		{
+			if(Y==1)
+			{
+				main();
+			}
+		}
 		
 	}
 	else if(input[0]=='C')
