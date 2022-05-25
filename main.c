@@ -25,4 +25,26 @@ int main()
 	GPIOF->DATA=0x00;
 	GPIOD->DATA=0x00;
 	
+	again:
+	lcd_cmd(0x01);
+	set_cursor(0,5);
+	lcd_print("Hello");
+	delay_ms(2000);
+	set_cursor(0,2);
+	lcd_print("I am Martha");
+	delay_ms(2000);
+	lcd_cmd(0x01);
+	set_cursor(0,3);
+	lcd_print("lets cook");
+	delay_ms(2000);
+	lcd_cmd(0x01);
+	set_cursor(0,4);
+	lcd_print("Please");
+	delay_ms(1000);
+	lcd_cmd(0x01);
+	set_cursor(0,3);
+	lcd_print("Enter mood");
+  delay_ms(1000);
+	set_cursor(1,4);
+	input[0] = keypad_getkey();
 }
