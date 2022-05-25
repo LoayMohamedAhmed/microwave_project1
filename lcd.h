@@ -13,7 +13,7 @@
 	void delay_ms(int t);
 	void lcd_cmd(unsigned char command);
 	void lcd_write(u8 data);
-  	void set_cursor(unsigned int x,unsigned int y) ;
+  void set_cursor(unsigned int x,unsigned int y) ;
  	void Ports_Init ();
 	void delay_micro();
 	void LCD_printInt(int no);

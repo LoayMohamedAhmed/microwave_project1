@@ -425,6 +425,16 @@
               <FileType>1</FileType>
               <FilePath>.\lcd.c</FilePath>
             </File>
+            <File>
+              <FileName>state.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\state.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

@@ -12,13 +12,13 @@ void Enter_Kilos()
 	if(input[0]=='B')
 	{
 	  set_cursor(0,0); 
-    lcd_print("chicken weight:");
+    lcd_print("Chicken Weight:");
 		delay_ms(1000);
 	}
 	else if(input[0]=='C')
 	{
 		set_cursor(0,0); 
-    lcd_print("Beaf weight:");
+    lcd_print("Beaf Weight:");
 		delay_ms(1000);
 	}
 	set_cursor(1,8); 
@@ -34,10 +34,10 @@ void Enter_Kilos()
 	{
 			lcd_cmd(0X01);
 			set_cursor(0,1);
-			lcd_print("invalid input ");
+			lcd_print("Invalid input ");
 			delay_ms(2000);
 			set_cursor(0,0);
-			lcd_print("please try again");
+			lcd_print("Please try again");
 			delay_ms(1000);
 			goto again;
 	}
@@ -49,7 +49,19 @@ void GPIOF_Handler(){
 	 int m,k,j,i;
 	 if (GPIOF->MIS & 0x01) /* check if interrupt causes by PF0/SW2*/
 	 {
-		
+		if((count_array[0]>='3'&&(count_array[1]>'0'||count_array[2]>'0'||count_array[3]>'0'))||
+				(count_array[2]>='6')||(count_array[0]=='0'&&count_array[1]=='0'&&count_array[2]=='0'&&count_array[3]=='0'))
+			{
+				lcd_cmd(0x01);
+				set_cursor(0,1);
+				lcd_print("Invalid input!");
+				delay_ms(1000);
+				for(g=0;g<4;g++)
+				{
+					count_array1[g]='0';
+				}
+				goto end;
+			}
 		 
 	 }
 	  else if (GPIOF->MIS & 0x10)// check if interrupt causes by PF4/SW1 
