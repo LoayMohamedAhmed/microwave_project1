@@ -82,8 +82,9 @@ for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minut
              lcd_write(':');
              LCD_printInt(j);
              LCD_printInt(i);
-						
+						  while(GPIOD->DATA==0x00){
 							 if(GPIOD->DATA==0x80){break;}//if door was opened
+						 }
 				     delay_ms(900);
 			
 
@@ -105,4 +106,5 @@ for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minut
           Z=1;
           goto end;
         }
+				
 }
