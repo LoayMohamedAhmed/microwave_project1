@@ -182,4 +182,30 @@ void cooking()
 		
 		
 	}
-}	
+	else if(input[0]=='C')
+	{
+		   if (kilos <'5'){
+			  count_array[0] = '0';
+				count_array[1] = '0';
+				count_array[2] = kilos;
+				count_array[3] = ((kilos-'0')*2)+'0';
+			}
+			else if (kilos == '5'){
+				
+				count_array[0] = '0';
+				count_array[1] = '1';
+				count_array[2] = '0';
+				count_array[3] = '0';
+			}
+			else if (kilos>'5'){
+				
+				count_array[0] = '0';
+				count_array[1] = '1';
+				count_array[2] = ((kilos-'0')-5)+'0';
+				count_array[3] = (((kilos-'0')-5)*2)+'0';
+				 
+			}
+		lcd_cmd(0X01);
+	  set_cursor(0,2); 
+    lcd_print("push switch 2 to start...");
+  }	
