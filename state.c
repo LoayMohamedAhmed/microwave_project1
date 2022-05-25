@@ -82,6 +82,27 @@ for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minut
              lcd_write(':');
              LCD_printInt(j);
              LCD_printInt(i);
+						
+							 if(GPIOD->DATA==0x80){break;}//if door was opened
 				     delay_ms(900);
-	
+			
+
+
+						if(GPIO_PORTF_DATA_R ==0x0D) //if pause switch is pressed
+				 { 
+      while(GPIO_PORTF_DATA_R != 0x1C){
+				GPIOD->DATA=0X40;
+				GPIOF->DATA&=~0X0C;
+        delay_ms(700);
+				GPIOF->DATA|=0X0C;
+				set_cursor(0,3);
+        while(GPIO_PORTF_DATA_R==0X0D) // if pause switch is pressed again ->stop
+        { 
+          i=3;
+          X=1;
+          Y=1;
+          W=1;
+          Z=1;
+          goto end;
+        }
 }
