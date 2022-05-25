@@ -29,32 +29,37 @@ lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg type
         void delay_micro();
 state.h(2): warning:  #1295-D: Deprecated declaration Enter_Kilos - give arg types
   void Enter_Kilos();
-state.c(50): error:  #20: identifier "GPIOF" is undefined
-         if (GPIOF->MIS & 0x01) /* check if interrupt causes by PF0/SW2*/
 state.c(52): error:  #20: identifier "count_array" is undefined
-                if((count_array[0]>='3'&&(count_array[1]>'0'||count_array[2]>'0'||count_array[3]>'0'))||
-state.c(59): error:  #20: identifier "g" is undefined
-                                for(g=0;g<4;g++)
-state.c(61): error:  #20: identifier "count_array1" is undefined
-                                        count_array1[g]='0';
-state.c(72): warning:  #1-D: last line of file ends without a newline
-  }
-state.c(49): warning:  #177-D: variable "m" was declared but never referenced
-         int m,k,j,i;
-state.c(49): warning:  #177-D: variable "k" was declared but never referenced
-         int m,k,j,i;
-state.c(49): warning:  #177-D: variable "j" was declared but never referenced
-         int m,k,j,i;
-state.c(49): warning:  #177-D: variable "i" was declared but never referenced
-         int m,k,j,i;
-state.c(63): error:  #114: label "end" was referenced but not defined
-                                goto end;
-state.c: 8 warnings, 5 errors
+        for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minutes
+state.c(67): error:  #20: identifier "GPIOD" is undefined
+      while(GPIOD->DATA==0x00)
+state.c(75): error:  #20: identifier "GPIOF" is undefined
+                                GPIOF->DATA&=~0X0C;
+state.c(84): error:  #20: identifier "Y" is undefined
+            Y=1;
+state.c(85): error:  #20: identifier "W" is undefined
+            W=1;
+state.c(86): error:  #20: identifier "Z" is undefined
+            Z=1;
+state.c(103): error:  #20: identifier "GPIOF" is undefined
+  GPIOF->DATA=0x00;
+state.c(106): error:  #20: identifier "Y" is undefined
+  Y=1;
+state.c(107): error:  #20: identifier "W" is undefined
+  W=1;
+state.c(108): error:  #20: identifier "Z" is undefined
+  Z=1;
+state.c(135): error:  #169: expected a declaration
+        else if (GPIOF->MIS & 0x10)// check if interrupt causes by PF4/SW1 
+state.c(160): warning:  #1-D: last line of file ends without a newline
+  }     
+state.c(160): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+state.c: 5 warnings, 11 errors
 compiling main.c...
 lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
         void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
 main.c: 2 warnings, 0 errors
-".\project.axf" - 5 Error(s), 14 Warning(s).
+".\project.axf" - 11 Error(s), 11 Warning(s).
 Target not created

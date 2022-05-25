@@ -46,7 +46,8 @@ void Enter_Kilos()
 	return;
 
 }
-void GPIOF_Handler(){
+void GPIOF_Handler()
+{
 	
 	for( m = count_array[0]-'0'; m>=0; m--){//Counting down the first digit in minutes
   
@@ -141,5 +142,19 @@ lcd_cmd(0X01);
       count_array1[3]='0';
       GPIOF->ICR |= 0x10;
 		}
-    }
-      
+ }
+
+void cooking() 
+{
+	if(input[0]=='A')  					//Popcorn
+	{
+	
+		count_array[0]='0';
+		count_array[1]='1';
+		count_array[2]='0';
+		count_array[3]='0';				//1 minute
+		lcd_cmd(0X01);
+	  set_cursor(0,2); 
+    lcd_print("push switch 2 to start...");
+	}
+}	
