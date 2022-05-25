@@ -14,19 +14,25 @@ lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
         void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
-keypad.c: 2 warnings, 0 errors
+lcd.h(21): warning:  #1295-D: Deprecated declaration intialisation_timer - give arg types
+        void intialisation_timer();
+keypad.c: 3 warnings, 0 errors
 compiling delay.c...
 compiling lcd.c...
 lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
         void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
-lcd.c: 2 warnings, 0 errors
+lcd.h(21): warning:  #1295-D: Deprecated declaration intialisation_timer - give arg types
+        void intialisation_timer();
+lcd.c: 3 warnings, 0 errors
 compiling state.c...
 lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
         void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
+lcd.h(21): warning:  #1295-D: Deprecated declaration intialisation_timer - give arg types
+        void intialisation_timer();
 state.h(2): warning:  #1295-D: Deprecated declaration Enter_Kilos - give arg types
   void Enter_Kilos();
 state.c(52): error:  #20: identifier "count_array" is undefined
@@ -51,15 +57,86 @@ state.c(108): error:  #20: identifier "Z" is undefined
   Z=1;
 state.c(135): error:  #169: expected a declaration
         else if (GPIOF->MIS & 0x10)// check if interrupt causes by PF4/SW1 
-state.c(160): warning:  #1-D: last line of file ends without a newline
-  }     
-state.c(160): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-state.c: 5 warnings, 11 errors
+state.c(170): warning:  #12-D: parsing restarts here after previous syntax error
+                 num = 0.5*(kilos-'0');                         /*for calculating the time needed in minutes for every weight*/
+state.c(171): error:  #77-D: this declaration has no storage class or type specifier
+       interpart = (int)num;                            /*for getting the integer part of the time*/
+state.c(171): error:  #20: identifier "num" is undefined
+       interpart = (int)num;                            /*for getting the integer part of the time*/
+state.c(172): error:  #77-D: this declaration has no storage class or type specifier
+       decpart = num - interpart;       /*for separating of the decimal part from the integer part*/ 
+state.c(172): error:  #28: expression must have a constant value
+       decpart = num - interpart;       /*for separating of the decimal part from the integer part*/ 
+state.c(173): error:  #77-D: this declaration has no storage class or type specifier
+       sec = (int)(decpart*60);                 /*converting the decimal part into seconds*/
+state.c(173): error:  #28: expression must have a constant value
+       sec = (int)(decpart*60);                 /*converting the decimal part into seconds*/
+state.c(175): error:  #94-D: the size of an array must be greater than zero
+       count_array[0] = '0';
+state.c(175): error:  #77-D: this declaration has no storage class or type specifier
+       count_array[0] = '0';
+state.c(175): warning:  #520-D: initialization with "{...}" expected for aggregate object
+       count_array[0] = '0';
+state.c(175): error:  #146: too many initializer values
+       count_array[0] = '0';
+state.c(176): error:  #77-D: this declaration has no storage class or type specifier
+       count_array[1] = interpart + '0';
+state.c(176): error:  #148: variable "count_array" has already been initialized
+       count_array[1] = interpart + '0';
+state.c(176): warning:  #520-D: initialization with "{...}" expected for aggregate object
+       count_array[1] = interpart + '0';
+state.c(176): error:  #28: expression must have a constant value
+       count_array[1] = interpart + '0';
+state.c(177): error:  #77-D: this declaration has no storage class or type specifier
+       count_array[2] = '0' + (sec/10);
+state.c(177): error:  #147: declaration is incompatible with "int count_array[1]" (declared at line 175)
+       count_array[2] = '0' + (sec/10);
+state.c(177): error:  #148: variable "count_array" has already been initialized
+       count_array[2] = '0' + (sec/10);
+state.c(177): warning:  #520-D: initialization with "{...}" expected for aggregate object
+       count_array[2] = '0' + (sec/10);
+state.c(177): error:  #28: expression must have a constant value
+       count_array[2] = '0' + (sec/10);
+state.c(178): error:  #77-D: this declaration has no storage class or type specifier
+       count_array[3] = '0';
+state.c(178): error:  #147: declaration is incompatible with "int count_array[2]" (declared at line 177)
+       count_array[3] = '0';
+state.c(178): warning:  #520-D: initialization with "{...}" expected for aggregate object
+       count_array[3] = '0';
+state.c(179): error:  #79: expected a type specifier
+                 lcd_cmd(0X01);
+state.c: 9 warnings, 30 errors
 compiling main.c...
 lcd.h(17): warning:  #1295-D: Deprecated declaration Ports_Init - give arg types
         void Ports_Init ();
 lcd.h(18): warning:  #1295-D: Deprecated declaration delay_micro - give arg types
         void delay_micro();
-main.c: 2 warnings, 0 errors
-".\project.axf" - 11 Error(s), 11 Warning(s).
+lcd.h(21): warning:  #1295-D: Deprecated declaration intialisation_timer - give arg types
+        void intialisation_timer();
+main.c(17): error:  #20: identifier "Y" is undefined
+        Y=0;
+main.c(18): error:  #20: identifier "Z" is undefined
+        Z=0;
+main.c(19): error:  #20: identifier "W" is undefined
+        W=0;
+main.c(23): warning:  #223-D: function "interupt_init" declared implicitly
+        interupt_init();
+main.c(24): warning:  #223-D: function "init_lcd" declared implicitly
+        init_lcd ();
+main.c(25): error:  #20: identifier "GPIOF" is undefined
+        GPIOF->DATA=0x00;
+main.c(26): error:  #20: identifier "GPIOD" is undefined
+        GPIOD->DATA=0x00;
+main.c(49): warning:  #223-D: function "keypad_getkey" declared implicitly
+        input[0] = keypad_getkey();
+main.c(56): warning:  #223-D: function "cooking" declared implicitly
+                cooking();
+main.c(68): warning:  #223-D: function "Enter_Kilos" declared implicitly
+                  Enter_Kilos();
+main.c(69): warning:  #223-D: function "cooking" declared implicitly
+                        cooking();
+main.c(28): warning:  #177-D: label "again" was declared but never referenced
+        again:
+main.c: 10 warnings, 5 errors
+".\project.axf" - 35 Error(s), 25 Warning(s).
 Target not created

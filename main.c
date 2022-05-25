@@ -56,5 +56,16 @@ int main()
 		cooking();
 		}
 	
-		
+	else if(input[0]=='C')
+		{
+			lcd_cmd(0X01);
+			set_cursor(0,0); 
+      lcd_print("Chicken Weight ");
+			delay_ms(500);
+			set_cursor(1,1); 
+			lcd_print("in KG(1-9)");
+			delay_ms(1000);
+		  Enter_Kilos();
+			cooking();
+		}	
 }
