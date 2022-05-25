@@ -211,9 +211,9 @@ void cooking()
 		
 		while(1)
 		{
-			if(Y==1)
+			if(W==1)
 			{
-				main();
+			main();
 			}
 		}
   }	
