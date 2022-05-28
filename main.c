@@ -57,6 +57,17 @@ int main()
 		delay_ms(500);
 		cooking();
 		}
+	else if(input[0]=='B')
+		{
+		  lcd_cmd(0X01);
+				set_cursor(0,0); 
+			lcd_print("Enter Beaf weight");
+			set_cursor(1,2); 
+			lcd_print("in KG(1-9)");
+			delay_ms(1000);
+			Enter_Kilos();
+			cooking();
+		}
 	
 	else if(input[0]=='C')
 		{
@@ -70,6 +81,13 @@ int main()
 		  Enter_Kilos();
 			cooking();
 		}	
+		else if(input[0]=='D')
+		{
+			lcd_cmd(0x01);
+			set_cursor(0,3);
+			lcd_print("enter time");
+			enter_counter();
+		}
 		else 
 		{
 			lcd_cmd(0X01);
